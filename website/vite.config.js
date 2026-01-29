@@ -5,7 +5,7 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/4c16/', // Absolute base path is required for client-side routing
   build: {
     outDir: '../docs',
     emptyOutDir: true,

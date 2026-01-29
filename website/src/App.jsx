@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Layout from './components/Layout';
 import HomeTab from './components/HomeTab';
 import LecturesTab from './components/LecturesTab';
 import LabsTab from './components/LabsTab';
@@ -8,22 +8,25 @@ import KeynotesTab from './components/KeynotesTab';
 import LabSystemTab from './components/LabSystemTab';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('home');
-
+  // Using a hash router or handling the base path is important for GitHub Pages.
+  // Since we want clean URLs (e.g. /4c16/LabSystem), we use BrowserRouter with basename.
+  // Ideally, the basename matches the repository name.
+  
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-900">
-      <Header activeTab={activeTab} setActiveTab={setActiveTab} />
-
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {activeTab === 'home' && <HomeTab />}
-        {activeTab === 'lectures' && <LecturesTab />}
-        {activeTab === 'labs' && <LabsTab setActiveTab={setActiveTab} />}
-        {activeTab === 'lab system' && <LabSystemTab />}
-        {activeTab === 'keynotes' && <KeynotesTab />}
-      </main>
-
-      <Footer />
-    </div>
+    <BrowserRouter basename="/4c16">
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomeTab />} />
+          <Route path="lectures" element={<LecturesTab />} />
+          <Route path="labs" element={<LabsTab />} />
+          <Route path="lab-system" element={<LabSystemTab />} />
+          <Route path="LabSystem" element={<LabSystemTab />} /> {/* Case sensitive alias */}
+          <Route path="keynotes" element={<KeynotesTab />} />
+          {/* Catch-all route to redirect back to home or show 404 */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

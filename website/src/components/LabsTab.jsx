@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Terminal, GraduationCap, ChevronRight, Server } from 'lucide-react';
 import { labsContent } from '../data/content';
 
-export default function LabsTab({ setActiveTab }) {
+export default function LabsTab() {
   return (
     <div className="max-w-4xl mx-auto space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="text-center mb-8">
@@ -24,14 +25,14 @@ export default function LabsTab({ setActiveTab }) {
                   {labsContent.labEnvironment.highlight}
                 </p>
               </div>
-              <button 
-                onClick={() => setActiveTab('lab system')}
+              <Link 
+                to="/LabSystem"
                 className="inline-flex items-center text-sm font-bold text-tcd-blue hover:text-tcd-blue-dark transition-colors group"
               >
                 <Server size={16} className="mr-2" />
                 Learn more about the infrastructure
                 <ChevronRight size={16} className="ml-1 transition-transform group-hover:translate-x-1" />
-              </button>
+              </Link>
            </div>
            <div className="bg-gray-50 flex items-center justify-center p-8 border-l border-gray-100">
               <img src="./assets/slide-lab-env.png" alt="Lab Environment Diagram" className="rounded-lg shadow-sm max-w-full h-auto border border-gray-200" />

@@ -1,6 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Header({ activeTab, setActiveTab }) {
+export default function Header({ activeTab }) {
+  const navItems = [
+    { name: 'home', path: '/' },
+    { name: 'lectures', path: '/lectures' },
+    { name: 'labs', path: '/labs' },
+    { name: 'lab system', path: '/LabSystem' },
+    { name: 'keynotes', path: '/keynotes' },
+  ];
+
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-20 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,18 +22,18 @@ export default function Header({ activeTab, setActiveTab }) {
             </div>
           </div>
           <nav className="flex space-x-1 md:space-x-4">
-            {['home', 'lectures', 'labs', 'lab system', 'keynotes'].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
                 className={`capitalize px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                  activeTab === tab
+                  activeTab === item.name
                     ? 'text-tcd-blue bg-blue-50'
                     : 'text-gray-600 hover:text-tcd-blue hover:bg-gray-50'
                 }`}
               >
-                {tab}
-              </button>
+                {item.name}
+              </Link>
             ))}
           </nav>
         </div>
