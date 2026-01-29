@@ -1,0 +1,34 @@
+import React from 'react';
+
+export default function Header({ activeTab, setActiveTab }) {
+  return (
+    <header className="bg-white border-b border-gray-200 sticky top-0 z-20 shadow-sm">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          <div className="flex items-center space-x-4">
+            <img src="https://www.tcd.ie/media/tcd/site-assets/images/tcd-logo.png" alt="Trinity College Dublin" className="h-14 w-auto object-contain" />
+            <div className="hidden sm:flex flex-col border-l border-gray-300 pl-4 py-1 h-10 justify-center">
+               <span className="font-bold text-lg leading-none text-tcd-blue tracking-tight">4C16</span>
+               <span className="font-medium text-xs text-gray-500 uppercase tracking-wide mt-1">Deep Learning and its Applications</span>
+            </div>
+          </div>
+          <nav className="flex space-x-1 md:space-x-4">
+            {['home', 'lectures', 'labs', 'keynotes'].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`capitalize px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                  activeTab === tab
+                    ? 'text-tcd-blue bg-blue-50'
+                    : 'text-gray-600 hover:text-tcd-blue hover:bg-gray-50'
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </nav>
+        </div>
+      </div>
+    </header>
+  );
+}
