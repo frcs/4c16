@@ -181,6 +181,30 @@ function App() {
               </a>
             </div>
 
+            {/* Recorded Lectures Section */}
+            <div className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
+              <div className="md:flex">
+                <div className="md:flex-shrink-0">
+                  <img className="h-48 w-full object-cover md:w-64" src="./assets/slide-video.png" alt="Lecture Videos" />
+                </div>
+                <div className="p-8">
+                  <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Video Archive</div>
+                  <a href="https://goo.gl/DP2jnJ" target="_blank" rel="noreferrer" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">
+                    Watch Previous Years' Lectures
+                  </a>
+                  <p className="mt-2 text-gray-500">
+                    Catch up on key concepts or review complex topics with our archive of recorded lectures from previous years available on YouTube.
+                  </p>
+                  <div className="mt-4">
+                     <a href="https://goo.gl/DP2jnJ" target="_blank" rel="noreferrer" className="inline-flex items-center text-red-600 hover:text-red-700 font-medium">
+                        <Play size={16} className="mr-2 fill-current" />
+                        Open Playlist
+                     </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="bg-white shadow overflow-hidden sm:rounded-md border border-gray-200">
               <ul className="divide-y divide-gray-200">
                 {lectures.map((lecture) => (
@@ -232,25 +256,58 @@ function App() {
         )}
 
         {activeTab === 'labs' && (
-          <div className="max-w-3xl mx-auto space-y-8 animate-in fade-in duration-500">
-            <div className="text-center mb-12">
+          <div className="max-w-4xl mx-auto space-y-12 animate-in fade-in duration-500">
+            <div className="text-center mb-8">
               <h2 className="text-3xl font-bold text-gray-900">Lab & Resources</h2>
               <p className="mt-2 text-gray-600">Everything you need for the practical sessions.</p>
             </div>
 
+            <div className="bg-white shadow-sm rounded-lg border border-gray-200 overflow-hidden">
+               <div className="md:grid md:grid-cols-2">
+                 <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                      <Terminal className="mr-2 text-blue-900" /> Lab Environment
+                    </h3>
+                    <p className="text-gray-600 mb-4">
+                      We have designed a unique environment specifically for this course so that students can learn best industry practices.
+                      Our web platform can transparently connect students to a Google Cloud Platform cluster or Colab via web based terminal/editor/Jupyter sessions.
+                    </p>
+                    <div className="bg-blue-50 border-l-4 border-blue-900 p-4">
+                      <p className="text-sm text-blue-800">
+                        Labs use the <strong>Keras</strong> framework and are automatically assessed using Git to give immediate feedback.
+                      </p>
+                    </div>
+                 </div>
+                 <div className="bg-gray-50 flex items-center justify-center p-4">
+                    <img src="./assets/slide-lab-env.png" alt="Lab Environment Diagram" className="rounded shadow-sm max-w-full h-auto" />
+                 </div>
+               </div>
+            </div>
+
             <div className="bg-white shadow-sm rounded-lg border border-gray-200 p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                <Terminal className="mr-2 text-blue-900" /> Lab Environment
-              </h3>
-              <p className="text-gray-600 mb-4">
-                We have designed a unique environment specifically for this course so that students can learn best industry practices.
-                Our web platform can transparently connect students to a Google Cloud Platform cluster or Colab via web based terminal/editor/Jupyter sessions.
-              </p>
-              <div className="bg-blue-50 border-l-4 border-blue-900 p-4">
-                <p className="text-sm text-blue-800">
-                  Labs use the <strong>Keras</strong> framework and are automatically assessed using Git to give immediate feedback.
-                </p>
-              </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Course Projects</h3>
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                    <img src="./assets/slide-labs.png" alt="Course Projects" className="rounded-lg shadow-sm border border-gray-100" />
+                    <div>
+                        <p className="text-gray-600 mb-4">
+                            Students will work on real-world challenges including:
+                        </p>
+                        <ul className="space-y-3">
+                            <li className="flex items-start">
+                                <ChevronRight className="flex-shrink-0 h-5 w-5 text-blue-500" />
+                                <span className="ml-2 text-gray-700">Image classification with Deep Neural Networks</span>
+                            </li>
+                            <li className="flex items-start">
+                                <ChevronRight className="flex-shrink-0 h-5 w-5 text-blue-500" />
+                                <span className="ml-2 text-gray-700">Self-driving car simulation (Udacity)</span>
+                            </li>
+                            <li className="flex items-start">
+                                <ChevronRight className="flex-shrink-0 h-5 w-5 text-blue-500" />
+                                <span className="ml-2 text-gray-700">Text generation and detection with RNNs</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
