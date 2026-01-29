@@ -2,22 +2,82 @@ import React, { useState } from 'react';
 import { BookOpen, Terminal, FileText, ChevronRight, GraduationCap, Play, User, Calendar } from 'lucide-react';
 
 const lectures = [
-  { id: '00', title: 'Introduction', resources: [{ type: 'slides', url: '/handouts/handout-00-intro.pdf' }] },
-  { id: '01', title: 'Linear Regression/Least Squares', resources: [
-    { type: 'slides', url: '/handouts/handout-01-linear-regression.pdf' },
-    { type: 'tutorial', text: 'Linear Algebra', url: '/handouts/tutorial-00-linear-algebra.pdf', solution: '/handouts/tutorial-00-linear-algebra-solutions.pdf' },
-    { type: 'tutorial', text: 'Least Squares', url: '/handouts/tutorial-01-linear-regression.pdf', solution: '/handouts/tutorial-01-linear-regression-solutions.pdf' }
-  ]},
-  { id: '02', title: 'Logistic Regression', resources: [{ type: 'slides', url: '/handouts/handout-02-logistic-regression.pdf' }] },
-  { id: '03', title: 'Classic Classifiers', resources: [{ type: 'slides', url: '/handouts/handout-03-classic-classifiers.pdf' }] },
-  { id: '04', title: 'Evaluating Classifier Performance', resources: [{ type: 'slides', url: '/handouts/handout-04-evaluating-classifier-performance.pdf' }] },
-  { id: '05', title: 'FeedForward Neural Networks', resources: [{ type: 'slides', url: '/handouts/handout-05-deep-feedforward-networks.pdf' }] },
-  { id: '06', title: 'Convolutional Neural Networks', resources: [{ type: 'slides', url: '/handouts/handout-06-convolutional-neural-networks.pdf' }] },
-  { id: '07', title: 'Advances in Network Architectures', resources: [{ type: 'slides', url: '/handouts/handout-07-advances-in-network-architectures.pdf' }] },
-  { id: '08', title: 'Recurrent Neural Networks', resources: [{ type: 'slides', url: '/handouts/handout-08-recurrent-neural-networks.pdf' }] },
-  { id: '09', title: 'Attention Mechanism and Transformer Model', resources: [{ type: 'slides', url: '/handouts/handout-09-transformers.pdf' }] },
-  { id: '10', title: 'Generative Models', resources: [{ type: 'slides', url: '/handouts/handout-10-generative-models.pdf' }] },
-  { id: '11', title: 'Large Language Models', resources: [{ type: 'slides', url: '/handouts/handout-11-large-language-models.pdf' }] },
+  { 
+    id: '00', 
+    title: 'Introduction', 
+    description: 'Course logistics, history of Deep Learning, and module overview.',
+    resources: [{ type: 'slides', url: '/handouts/handout-00-intro.pdf' }] 
+  },
+  { 
+    id: '01', 
+    title: 'Linear Regression/Least Squares', 
+    description: 'Fundamentals of regression, least squares estimation, and maximum likelihood.',
+    resources: [
+      { type: 'slides', url: '/handouts/handout-01-linear-regression.pdf' },
+      { type: 'tutorial', text: 'Linear Algebra', url: '/handouts/tutorial-00-linear-algebra.pdf', solution: '/handouts/tutorial-00-linear-algebra-solutions.pdf' },
+      { type: 'tutorial', text: 'Least Squares', url: '/handouts/tutorial-01-linear-regression.pdf', solution: '/handouts/tutorial-01-linear-regression-solutions.pdf' }
+    ]
+  },
+  { 
+    id: '02', 
+    title: 'Logistic Regression', 
+    description: 'Binary classification, sigmoid functions, and cross-entropy loss.',
+    resources: [{ type: 'slides', url: '/handouts/handout-02-logistic-regression.pdf' }] 
+  },
+  { 
+    id: '03', 
+    title: 'Classic Classifiers', 
+    description: 'k-NN, Decision Trees, SVMs, and the Kernel Trick.',
+    resources: [{ type: 'slides', url: '/handouts/handout-03-classic-classifiers.pdf' }] 
+  },
+  { 
+    id: '04', 
+    title: 'Evaluating Classifier Performance', 
+    description: 'Confusion matrices, ROC curves, precision-recall, and F1 scores.',
+    resources: [{ type: 'slides', url: '/handouts/handout-04-evaluating-classifier-performance.pdf' }] 
+  },
+  { 
+    id: '05', 
+    title: 'FeedForward Neural Networks', 
+    description: 'Perceptrons, multi-layer networks, backpropagation, and activation functions.',
+    resources: [{ type: 'slides', url: '/handouts/handout-05-deep-feedforward-networks.pdf' }] 
+  },
+  { 
+    id: '06', 
+    title: 'Convolutional Neural Networks', 
+    description: 'Convolutional layers, pooling, stride, and architectures for image processing.',
+    resources: [{ type: 'slides', url: '/handouts/handout-06-convolutional-neural-networks.pdf' }] 
+  },
+  { 
+    id: '07', 
+    title: 'Advances in Network Architectures', 
+    description: 'Residual connections, batch normalization, dropout, and modern architectures (ResNet, Inception).',
+    resources: [{ type: 'slides', url: '/handouts/handout-07-advances-in-network-architectures.pdf' }] 
+  },
+  { 
+    id: '08', 
+    title: 'Recurrent Neural Networks', 
+    description: 'Sequential data processing, vanishing gradients, LSTMs, and GRUs.',
+    resources: [{ type: 'slides', url: '/handouts/handout-08-recurrent-neural-networks.pdf' }] 
+  },
+  { 
+    id: '09', 
+    title: 'Attention Mechanism and Transformer Model', 
+    description: 'Attention mechanisms, self-attention, and the Transformer architecture (BERT, GPT).',
+    resources: [{ type: 'slides', url: '/handouts/handout-09-transformers.pdf' }] 
+  },
+  { 
+    id: '10', 
+    title: 'Generative Models', 
+    description: 'Autoencoders, VAEs, GANs, and diffusion models.',
+    resources: [{ type: 'slides', url: '/handouts/handout-10-generative-models.pdf' }] 
+  },
+  { 
+    id: '11', 
+    title: 'Large Language Models', 
+    description: 'Large Language Models, tokenization, pre-training, and fine-tuning.',
+    resources: [{ type: 'slides', url: '/handouts/handout-11-large-language-models.pdf' }] 
+  },
 ];
 
 const keynotes = [
@@ -153,7 +213,7 @@ function App() {
               </div>
 
               <div className="flex flex-col items-center my-12">
-                 <img src="./assets/machine_learning.png" alt="XKCD Machine Learning Comic" className="max-w-md w-full rounded-lg shadow-sm border border-gray-200" />
+                 <img src="./assets/machine_learning.png" alt="XKCD Machine Learning Comic" className="max-w-xs w-full rounded-lg shadow-sm border border-gray-200" />
                  <a href="https://xkcd.com/1838/" target="_blank" rel="noreferrer" className="text-sm text-gray-400 mt-2 hover:text-tcd-blue transition-colors">
                     https://xkcd.com/1838/
                  </a>
@@ -247,7 +307,10 @@ function App() {
                           <span className="flex-shrink-0 h-8 w-8 flex items-center justify-center bg-gray-100 rounded-full text-sm font-bold text-gray-500">
                             {lecture.id}
                           </span>
-                          <p className="ml-4 text-lg font-medium text-tcd-blue truncate">{lecture.title}</p>
+                          <div className="ml-4">
+                            <p className="text-lg font-medium text-tcd-blue truncate">{lecture.title}</p>
+                            <p className="mt-1 text-sm text-gray-600">{lecture.description}</p>
+                          </div>
                         </div>
                       </div>
                       <div className="mt-4 sm:flex sm:justify-between">
