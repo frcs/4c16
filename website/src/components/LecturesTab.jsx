@@ -44,7 +44,7 @@ export default function LecturesTab() {
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 group">
         <div className="md:flex">
           <div className="md:flex-shrink-0 relative overflow-hidden">
-            <img className="h-48 w-full object-cover md:w-72 transition-transform duration-500 group-hover:scale-105" src="./assets/slide-video.png" alt="Lecture Videos" />
+            <img className="h-48 w-full object-cover md:w-72 transition-transform duration-500 group-hover:scale-105" src={`${import.meta.env.BASE_URL}assets/slide-video.png`} alt="Lecture Videos" />
             <div className="absolute inset-0 bg-black bg-opacity-10 group-hover:bg-opacity-0 transition-opacity"></div>
           </div>
           <div className="p-8 flex flex-col justify-center">
@@ -86,7 +86,7 @@ export default function LecturesTab() {
                     {lecture.resources.map((res, idx) => (
                       <React.Fragment key={idx}>
                         <a
-                          href={res.url}
+                          href={`${import.meta.env.BASE_URL}${res.url.startsWith('/') ? res.url.slice(1) : res.url}`}
                           className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-blue-50 text-tcd-blue hover:bg-blue-100 transition-colors border border-blue-100"
                         >
                           <FileText size={12} className="mr-1.5" />
@@ -94,7 +94,7 @@ export default function LecturesTab() {
                         </a>
                         {res.solution && (
                           <a
-                            href={res.solution}
+                            href={`${import.meta.env.BASE_URL}${res.solution.startsWith('/') ? res.solution.slice(1) : res.solution}`}
                             className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition-colors border border-emerald-100"
                           >
                             <FileText size={12} className="mr-1.5" />

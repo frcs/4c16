@@ -54,7 +54,7 @@ export default function KeynotesTab() {
                     </a>
                   )}
                   {talk.slides && (
-                    <a href={talk.slides} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-md transition-colors">
+                    <a href={talk.slides.startsWith('http') ? talk.slides : `${import.meta.env.BASE_URL}${talk.slides.startsWith('/') ? talk.slides.slice(1) : talk.slides}`} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-md transition-colors">
                       <FileText size={16} className="mr-2" />
                       Slides
                     </a>
