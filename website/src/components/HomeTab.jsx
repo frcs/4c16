@@ -1,6 +1,7 @@
 import React from 'react';
 import { GraduationCap, Terminal } from 'lucide-react';
 import { homeContent } from '../data/content';
+import { getAssetUrl } from '../utils/url';
 
 export default function HomeTab() {
   return (
@@ -35,7 +36,7 @@ export default function HomeTab() {
         </div>
 
         <div className="flex flex-col items-center my-12">
-           <img src={`${import.meta.env.BASE_URL}assets/machine_learning.png`} alt="XKCD Machine Learning Comic" className="max-w-xs w-full rounded-lg shadow-sm border border-gray-200" />
+           <img src={getAssetUrl('assets/machine_learning.png')} alt="XKCD Machine Learning Comic" className="max-w-xs w-full rounded-lg shadow-sm border border-gray-200" />
            <a href="https://xkcd.com/1838/" target="_blank" rel="noreferrer" className="text-sm text-gray-400 mt-2 hover:text-tcd-blue transition-colors">
               https://xkcd.com/1838/
            </a>
