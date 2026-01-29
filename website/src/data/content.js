@@ -27,3 +27,27 @@ export const labsContent = {
     ]
   }
 };
+
+export const labSystemContent = {
+  title: "Lab Infrastructure",
+  overview: "Our custom-built lab system provides students with seamless access to high-performance computing resources while maintaining a professional development workflow.",
+  features: [
+    {
+      title: "Cloud Computing",
+      description: "Direct integration with Google Cloud Platform (GCP) and Google Colab, providing the GPU/TPU power required for training Deep Learning models."
+    },
+    {
+      title: "Automated Assessment",
+      description: "A Git-based feedback loop that automatically assesses student submissions and provides immediate performance metrics."
+    },
+    {
+      title: "Professional Tooling",
+      description: "Full access to web-based VS Code editors, Linux terminals, and Jupyter Notebooks directly through the browser."
+    },
+    {
+      title: "Secure Access",
+      description: "Transparent authentication and secure proxying to remote compute clusters without complex local setup."
+    }
+  ]
+};
+

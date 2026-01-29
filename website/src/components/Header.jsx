@@ -13,7 +13,7 @@ export default function Header({ activeTab, setActiveTab }) {
             </div>
           </div>
           <nav className="flex space-x-1 md:space-x-4">
-            {['home', 'lectures', 'labs', 'keynotes'].map((tab) => (
+            {['home', 'lectures', 'labs', 'lab system', 'keynotes'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}

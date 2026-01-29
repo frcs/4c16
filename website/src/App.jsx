@@ -5,6 +5,7 @@ import HomeTab from './components/HomeTab';
 import LecturesTab from './components/LecturesTab';
 import LabsTab from './components/LabsTab';
 import KeynotesTab from './components/KeynotesTab';
+import LabSystemTab from './components/LabSystemTab';
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -16,7 +17,8 @@ function App() {
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {activeTab === 'home' && <HomeTab />}
         {activeTab === 'lectures' && <LecturesTab />}
-        {activeTab === 'labs' && <LabsTab />}
+        {activeTab === 'labs' && <LabsTab setActiveTab={setActiveTab} />}
+        {activeTab === 'lab system' && <LabSystemTab />}
         {activeTab === 'keynotes' && <KeynotesTab />}
       </main>
 
