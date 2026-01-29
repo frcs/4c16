@@ -1,5 +1,5 @@
 export const homeContent = {
-  title: "Machine Learning & Deep Learning",
+  title: "Deep Learning & its Applications",
   intro: `This module is an introduction course to Machine Learning (ML), with a focus on Deep Learning. 
           The course is offered by the Electronic & Electrical Engineering department to the fourth and fifth year students of Trinity College Dublin.`,
   modernCurriculum: "From Least Squares to Transformers. The material is constructed in collaboration with leading industrial practitioners including Google, YouTube, and Intel.",
