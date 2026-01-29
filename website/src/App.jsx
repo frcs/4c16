@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BookOpen, Terminal, FileText, ChevronRight, GraduationCap } from 'lucide-react';
+import { BookOpen, Terminal, FileText, ChevronRight, GraduationCap, Play, User, Calendar } from 'lucide-react';
 
 const lectures = [
   { id: '00', title: 'Introduction', resources: [{ type: 'slides', url: '/handouts/handout-00-intro.pdf' }] },
@@ -18,6 +18,67 @@ const lectures = [
   { id: '09', title: 'Attention Mechanism and Transformer Model', resources: [{ type: 'slides', url: '/handouts/handout-09-transformers.pdf' }] },
   { id: '10', title: 'Generative Models', resources: [{ type: 'slides', url: '/handouts/handout-10-generative-models.pdf' }] },
   { id: '11', title: 'Large Language Models', resources: [{ type: 'slides', url: '/handouts/handout-11-large-language-models.pdf' }] },
+];
+
+const keynotes = [
+  {
+    year: '2018/19',
+    talks: [
+      {
+        speaker: 'Peter Barry',
+        affiliation: 'Jaguar Land Rover',
+        title: 'Automated Driving and AI',
+        date: 'Nov 1st',
+        description: 'Chief Software Architect Autonomous Driving at Jaguar Land Rover.',
+      },
+      {
+        speaker: 'Professor Linda Hogan',
+        affiliation: 'Trinity College Dublin',
+        title: 'Ethics of Automation',
+        date: 'Nov 21st',
+        description: 'Ethicist with extensive experience in research and teaching in pluralist and multi-religious contexts.',
+        video: 'https://youtu.be/wr1P0qK_nWA',
+      },
+      {
+        speaker: 'Michaela Blott',
+        affiliation: 'Xilinx',
+        title: 'Machine Learning & FPGAs',
+        date: 'Nov 22nd',
+        description: 'Principal Engineer and Engineering Director at Xilinx Ireland. Expert in FPGA and board-level design.',
+        video: 'https://youtu.be/kzVvrM7feJQ',
+      },
+      {
+        speaker: 'George Toderici',
+        affiliation: 'Google Research',
+        title: 'Recent Advances in Neural Net Architectures',
+        date: 'Nov 28th',
+        description: 'Tech Lead / Manager at Google, focusing on lossy image compression and beyond.',
+      },
+    ]
+  },
+  {
+    year: '2017/18',
+    talks: [
+      {
+        speaker: 'Michaela Blott',
+        affiliation: 'Xilinx',
+        title: 'Industry Keynote',
+        date: 'Nov 23rd',
+        video: 'https://youtu.be/pIVh-4tqjPc',
+        slides: '/keynotes/4c16-keynote-23-11-2017-Michaela_Blott-Xilinx.pdf',
+      },
+      {
+        speaker: 'Dr. George Toderici',
+        affiliation: 'Google Research',
+        title: 'Industry Keynote',
+      },
+      {
+        speaker: 'Dr. Sofiane Yous',
+        affiliation: 'Intel/Movidius',
+        title: 'Industry Keynote',
+      },
+    ]
+  }
 ];
 
 function App() {
@@ -39,7 +100,7 @@ function App() {
               </div>
             </div>
             <nav className="hidden md:flex space-x-8">
-              {['home', 'lectures', 'labs'].map((tab) => (
+              {['home', 'lectures', 'labs', 'keynotes'].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
@@ -212,6 +273,75 @@ function App() {
             </div>
           </div>
         )}
+
+        {activeTab === 'keynotes' && (
+          <div className="space-y-10 animate-in fade-in duration-500">
+            <div className="border-b border-gray-200 pb-4">
+              <h2 className="text-3xl font-bold text-gray-900">Industry Keynotes</h2>
+              <p className="mt-2 text-gray-600">Guest lectures from leading practitioners at Google, YouTube, Movidius, and more.</p>
+            </div>
+
+            {keynotes.map((yearGroup, index) => (
+              <div key={index} className="space-y-6">
+                <div className="flex items-center space-x-2">
+                  <h3 className="text-xl font-bold text-blue-900">{yearGroup.year} Series</h3>
+                  <div className="h-px bg-gray-200 flex-grow"></div>
+                </div>
+                
+                <div className="grid gap-6 md:grid-cols-2">
+                  {yearGroup.talks.map((talk, i) => (
+                    <div key={i} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                      <div className="flex justify-between items-start mb-4">
+                        <div className="flex items-center space-x-3">
+                          <div className="bg-blue-100 p-2 rounded-full text-blue-700">
+                            <User size={20} />
+                          </div>
+                          <div>
+                            <h4 className="font-bold text-gray-900">{talk.speaker}</h4>
+                            <span className="text-sm text-gray-500 font-medium">{talk.affiliation}</span>
+                          </div>
+                        </div>
+                        {talk.date && (
+                          <div className="flex items-center text-xs text-gray-400 bg-gray-50 px-2 py-1 rounded">
+                            <Calendar size={12} className="mr-1" />
+                            {talk.date}
+                          </div>
+                        )}
+                      </div>
+                      
+                      <h5 className="text-lg font-semibold text-gray-800 mb-2">{talk.title}</h5>
+                      
+                      {talk.description && (
+                        <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                          {talk.description}
+                        </p>
+                      )}
+
+                      <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-50">
+                        {talk.video && (
+                          <a href={talk.video} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm font-medium text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-md transition-colors">
+                            <Play size={16} className="mr-2 fill-current" />
+                            Watch Video
+                          </a>
+                        )}
+                        {talk.slides && (
+                          <a href={talk.slides} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm font-medium text-gray-600 hover:text-gray-800 bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-md transition-colors">
+                            <FileText size={16} className="mr-2" />
+                            Slides
+                          </a>
+                        )}
+                        {!talk.video && !talk.slides && (
+                          <span className="text-xs text-gray-400 italic">No recording available</span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
       </main>
 
       <footer className="bg-white border-t border-gray-200 mt-20">
