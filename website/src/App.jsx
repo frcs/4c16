@@ -181,29 +181,6 @@ function App() {
               </a>
             </div>
 
-            {/* Recorded Lectures Section */}
-            <div className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
-              <div className="md:flex">
-                <div className="md:flex-shrink-0">
-                  <img className="h-48 w-full object-cover md:w-64" src="./assets/slide-video.png" alt="Lecture Videos" />
-                </div>
-                <div className="p-8">
-                  <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Video Archive</div>
-                  <a href="https://goo.gl/DP2jnJ" target="_blank" rel="noreferrer" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">
-                    Watch Previous Years' Lectures
-                  </a>
-                  <p className="mt-2 text-gray-500">
-                    Catch up on key concepts or review complex topics with our archive of recorded lectures from previous years available on YouTube.
-                  </p>
-                  <div className="mt-4">
-                     <a href="https://goo.gl/DP2jnJ" target="_blank" rel="noreferrer" className="inline-flex items-center text-red-600 hover:text-red-700 font-medium">
-                        <Play size={16} className="mr-2 fill-current" />
-                        Open Playlist
-                     </a>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             <div className="bg-white shadow overflow-hidden sm:rounded-md border border-gray-200">
               <ul className="divide-y divide-gray-200">
@@ -252,6 +229,30 @@ function App() {
                 Previous year slides can be found <a href="https://github.com/frcs/4C16-2425" className="text-blue-600 hover:underline">here</a>.
               </p>
             </div>
+            {/* Recorded Lectures Section */}
+            <div className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
+              <div className="md:flex">
+                <div className="md:flex-shrink-0">
+                  <img className="h-48 w-full object-cover md:w-64" src="./assets/slide-video.png" alt="Lecture Videos" />
+                </div>
+                <div className="p-8">
+                  <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Video Archive</div>
+                  <a href="https://goo.gl/DP2jnJ" target="_blank" rel="noreferrer" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">
+                    Watch Previous Years' Lectures
+                  </a>
+                  <p className="mt-2 text-gray-500">
+                    Catch up on key concepts or review complex topics with our archive of recorded lectures from previous years available on YouTube.
+                  </p>
+                  <div className="mt-4">
+                     <a href="https://www.youtube.com/playlist?list=PLIo1iEzl5iB9NkulNR0X5vXN8AaEKglWT" target="_blank" rel="noreferrer" className="inline-flex items-center text-red-600 hover:text-red-700 font-medium">
+                        <Play size={16} className="mr-2 fill-current" />
+                        Open Playlist
+                     </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+              
           </div>
         )}
 
