@@ -91,10 +91,10 @@ function App() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center space-x-4">
-              <img src="./assets/tcd-logo.png" alt="Trinity College Dublin" className="h-14 w-auto object-contain" />
+              <img src="https://www.tcd.ie/media/tcd/site-assets/images/tcd-logo.png" alt="Trinity College Dublin" className="h-14 w-auto object-contain" />
               <div className="hidden sm:flex flex-col border-l border-gray-300 pl-4 py-1 h-10 justify-center">
                  <span className="font-bold text-lg leading-none text-tcd-blue tracking-tight">4C16</span>
-                 <span className="font-medium text-xs text-gray-500 uppercase tracking-wide mt-1">Deep Learning</span>
+                 <span className="font-medium text-xs text-gray-500 uppercase tracking-wide mt-1">Deep Learning and its Applications</span>
               </div>
             </div>
             <nav className="flex space-x-1 md:space-x-4">
@@ -124,10 +124,10 @@ function App() {
                 Machine Learning & Deep Learning
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-4xl">
-                4C16/5C16 is a course on Machine Learning (ML), with a focus on Deep Learning. 
-                It is a fourth and fifth year module offered by the 
+                This module is an introduction course to Machine Learning (ML), with a focus on Deep Learning. 
+                The course is offered by the 
                 <a href="https://www.tcd.ie/eleceng/" className="text-tcd-blue hover:underline mx-1 font-semibold">Electronic & Electrical Engineering</a>
-                department to the undergraduate students of 
+                department to the fourth and fifth year students of 
                 <a href="https://www.tcd.ie" className="text-tcd-blue hover:underline mx-1 font-semibold">Trinity College Dublin</a>.
               </p>
               
@@ -138,7 +138,7 @@ function App() {
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">Modern Curriculum</h3>
                   <p className="text-gray-600">
-                    From Least Squares to Transformers. The material is constructed in collaboration with leading industrial practitioners including Google, YouTube, and Movidius.
+                    From Least Squares to Transformers. The material is constructed in collaboration with leading industrial practitioners including Google, YouTube, and Intel.
                   </p>
                 </div>
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
@@ -150,6 +150,13 @@ function App() {
                     Unique environment connecting to Google Cloud Platform or Colab. Labs use Keras and are automatically assessed using Git.
                   </p>
                 </div>
+              </div>
+
+              <div className="flex flex-col items-center my-12">
+                 <img src="./assets/machine_learning.png" alt="XKCD Machine Learning Comic" className="max-w-md w-full rounded-lg shadow-sm border border-gray-200" />
+                 <a href="https://xkcd.com/1838/" target="_blank" rel="noreferrer" className="text-sm text-gray-400 mt-2 hover:text-tcd-blue transition-colors">
+                    https://xkcd.com/1838/
+                 </a>
               </div>
 
               <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
@@ -170,15 +177,39 @@ function App() {
 
         {activeTab === 'lectures' && (
           <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b border-gray-200 pb-4 gap-4">
-              <div>
-                <h2 className="text-3xl font-bold text-tcd-blue">Lecture Schedule</h2>
-                <p className="mt-2 text-gray-600">Access slides, tutorials, and handouts.</p>
-              </div>
-              <a href="https://frcs.github.io/4C16-LectureNotes" target="_blank" rel="noreferrer" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-tcd-blue hover:bg-tcd-blue-dark transition-colors">
-                <BookOpen className="mr-2" size={16} />
-                Full Lecture Notes
-              </a>
+            <div className="border-b border-gray-200 pb-4">
+               <h2 className="text-3xl font-bold text-tcd-blue">Lecture Schedule</h2>
+               <p className="mt-2 text-gray-600">Access slides, tutorials, and handouts.</p>
+            </div>
+
+            {/* Featured Lecture Notes Card */}
+            <div className="bg-gradient-to-r from-tcd-blue to-blue-800 rounded-xl shadow-lg text-white overflow-hidden relative">
+               <div className="absolute top-0 right-0 p-8 opacity-10">
+                  <BookOpen size={120} />
+               </div>
+               <div className="p-8 md:p-10 relative z-10">
+                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                     <div>
+                        <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-400 bg-opacity-30 text-blue-50 mb-4 border border-blue-300 border-opacity-30">
+                           Primary Reference
+                        </div>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">4C16 - Deep Learning and its Applications</h3>
+                        <p className="text-blue-100 text-lg mb-4">Comprehensive Online Lecture Notes</p>
+                        <p className="text-blue-200 text-sm max-w-2xl mb-6 leading-relaxed">
+                           Access the full set of interactive lecture notes, covering everything from the fundamentals of Machine Learning to advanced Deep Learning architectures.
+                        </p>
+                        <div className="flex flex-wrap items-center gap-4">
+                           <a href="https://frcs.github.io/4C16-LectureNotes/" target="_blank" rel="noreferrer" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-tcd-blue bg-white hover:bg-gray-50 transition-colors shadow-sm">
+                              <BookOpen className="mr-2" size={20} />
+                              Read the Lecture Notes
+                           </a>
+                           <a href="https://doi.org/10.5281/zenodo.17954655" target="_blank" rel="noreferrer" className="text-xs text-blue-300 hover:text-white transition-colors">
+                              DOI: 10.5281/zenodo.17954655
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
 
             {/* Recorded Lectures Section */}
@@ -417,7 +448,7 @@ function App() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="flex flex-col md:flex-row justify-between items-center">
                 <div className="flex items-center space-x-4 mb-4 md:mb-0">
-                    <img src="./assets/tcd-logo.png" alt="Trinity College Dublin" className="h-10 opacity-80 grayscale hover:grayscale-0 transition-all" />
+                    <img src="https://www.tcd.ie/media/tcd/site-assets/images/tcd-logo.png" alt="Trinity College Dublin" className="h-10 opacity-80 grayscale hover:grayscale-0 transition-all" />
                     <div className="h-8 w-px bg-gray-300"></div>
                     <span className="text-sm font-semibold text-gray-500">School of Engineering</span>
                 </div>
