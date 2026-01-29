@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        tcd: {
+          blue: '#0569b9',
+          'blue-dark': '#045494', // A slightly darker shade for hover states
+        }
+      }
+    },
   },
   plugins: [],
 }

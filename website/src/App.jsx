@@ -85,29 +85,27 @@ function App() {
   const [activeTab, setActiveTab] = useState('home');
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans text-gray-900">
+    <div className="min-h-screen bg-white font-sans text-gray-900">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-3">
-              <div className="bg-blue-900 text-white p-2 rounded-lg">
-                <span className="font-bold text-xl tracking-tight">4C16</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-semibold text-lg leading-tight">Deep Learning</span>
-                <span className="text-xs text-gray-500 uppercase tracking-wider">Trinity College Dublin</span>
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-20 shadow-sm">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            <div className="flex items-center space-x-4">
+              <img src="./assets/tcd-logo.png" alt="Trinity College Dublin" className="h-14 w-auto object-contain" />
+              <div className="hidden sm:flex flex-col border-l border-gray-300 pl-4 py-1 h-10 justify-center">
+                 <span className="font-bold text-lg leading-none text-tcd-blue tracking-tight">4C16</span>
+                 <span className="font-medium text-xs text-gray-500 uppercase tracking-wide mt-1">Deep Learning</span>
               </div>
             </div>
-            <nav className="hidden md:flex space-x-8">
+            <nav className="flex space-x-1 md:space-x-4">
               {['home', 'lectures', 'labs', 'keynotes'].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`capitalize px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  className={`capitalize px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                     activeTab === tab
-                      ? 'text-blue-900 bg-blue-50'
-                      : 'text-gray-600 hover:text-blue-900 hover:bg-gray-50'
+                      ? 'text-tcd-blue bg-blue-50'
+                      : 'text-gray-600 hover:text-tcd-blue hover:bg-gray-50'
                   }`}
                 >
                   {tab}
@@ -118,69 +116,95 @@ function App() {
         </div>
       </header>
 
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {activeTab === 'home' && (
-          <div className="space-y-12 animate-in fade-in duration-500">
+          <div className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <section className="prose prose-blue max-w-none">
-              <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl mb-6">
+              <h1 className="text-4xl font-extrabold tracking-tight text-tcd-blue sm:text-5xl mb-6">
                 Machine Learning & Deep Learning
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-4xl">
                 4C16/5C16 is a course on Machine Learning (ML), with a focus on Deep Learning. 
                 It is a fourth and fifth year module offered by the 
-                <a href="https://www.tcd.ie/eleceng/" className="text-blue-600 hover:underline mx-1">Electronic & Electrical Engineering</a>
+                <a href="https://www.tcd.ie/eleceng/" className="text-tcd-blue hover:underline mx-1 font-semibold">Electronic & Electrical Engineering</a>
                 department to the undergraduate students of 
-                <a href="https://www.tcd.ie" className="text-blue-600 hover:underline mx-1">Trinity College Dublin</a>.
+                <a href="https://www.tcd.ie" className="text-tcd-blue hover:underline mx-1 font-semibold">Trinity College Dublin</a>.
               </p>
               
               <div className="grid md:grid-cols-2 gap-8 my-12">
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                  <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 text-indigo-600">
-                    <GraduationCap size={20} />
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 text-tcd-blue">
+                    <GraduationCap size={24} />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Modern Curriculum</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Modern Curriculum</h3>
                   <p className="text-gray-600">
                     From Least Squares to Transformers. The material is constructed in collaboration with leading industrial practitioners including Google, YouTube, and Movidius.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4 text-emerald-600">
-                    <Terminal size={20} />
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 bg-emerald-50 rounded-lg flex items-center justify-center mb-4 text-emerald-600">
+                    <Terminal size={24} />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Hands-on Labs</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Hands-on Labs</h3>
                   <p className="text-gray-600">
                     Unique environment connecting to Google Cloud Platform or Colab. Labs use Keras and are automatically assessed using Git.
                   </p>
                 </div>
               </div>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Course Overview</h2>
-              <p className="text-gray-600 mb-4">
-                Although Deep Learning has been around for quite a while, it has recently become a disruptive technology 
-                that has been unexpectedly taking over operations of technology companies around the world.
-              </p>
-              <p className="text-gray-600 mb-4">
-                The course starts with an introduction to essential aspects of Machine Learning, including Least Squares, 
-                Logistic Regression and popular classification techniques. Then it dives into Neural Nets, including 
-                Feed Forward, CNNs, RNNs, and Transformers.
-              </p>
+              <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                <h2 className="text-2xl font-bold text-tcd-blue mt-0 mb-4">Course Overview</h2>
+                <p className="text-gray-600 mb-4">
+                  Although Deep Learning has been around for quite a while, it has recently become a disruptive technology 
+                  that has been unexpectedly taking over operations of technology companies around the world.
+                </p>
+                <p className="text-gray-600 mb-0">
+                  The course starts with an introduction to essential aspects of Machine Learning, including Least Squares, 
+                  Logistic Regression and popular classification techniques. Then it dives into Neural Nets, including 
+                  Feed Forward, CNNs, RNNs, and Transformers.
+                </p>
+              </div>
             </section>
           </div>
         )}
 
         {activeTab === 'lectures' && (
-          <div className="space-y-8 animate-in fade-in duration-500">
-            <div className="flex justify-between items-end border-b border-gray-200 pb-4">
+          <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b border-gray-200 pb-4 gap-4">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900">Lecture Schedule</h2>
+                <h2 className="text-3xl font-bold text-tcd-blue">Lecture Schedule</h2>
                 <p className="mt-2 text-gray-600">Access slides, tutorials, and handouts.</p>
               </div>
-              <a href="https://frcs.github.io/4C16-LectureNotes" target="_blank" rel="noreferrer" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-900 hover:bg-blue-800">
+              <a href="https://frcs.github.io/4C16-LectureNotes" target="_blank" rel="noreferrer" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-tcd-blue hover:bg-tcd-blue-dark transition-colors">
                 <BookOpen className="mr-2" size={16} />
                 Full Lecture Notes
               </a>
             </div>
 
+            {/* Recorded Lectures Section */}
+            <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 group">
+              <div className="md:flex">
+                <div className="md:flex-shrink-0 relative overflow-hidden">
+                  <img className="h-48 w-full object-cover md:w-72 transition-transform duration-500 group-hover:scale-105" src="./assets/slide-video.png" alt="Lecture Videos" />
+                  <div className="absolute inset-0 bg-black bg-opacity-10 group-hover:bg-opacity-0 transition-opacity"></div>
+                </div>
+                <div className="p-8 flex flex-col justify-center">
+                  <div className="uppercase tracking-wide text-xs text-tcd-blue font-bold">Video Archive</div>
+                  <a href="https://goo.gl/DP2jnJ" target="_blank" rel="noreferrer" className="block mt-1 text-xl leading-tight font-bold text-gray-900 hover:text-tcd-blue transition-colors">
+                    Watch Previous Years' Lectures
+                  </a>
+                  <p className="mt-2 text-gray-600">
+                    Catch up on key concepts or review complex topics with our archive of recorded lectures from previous years available on YouTube.
+                  </p>
+                  <div className="mt-4">
+                     <a href="https://www.youtube.com/playlist?list=PLIo1iEzl5iB9NkulNR0X5vXN8AaEKglWT" target="_blank" rel="noreferrer" className="inline-flex items-center text-red-600 hover:text-red-700 font-medium">
+                        <Play size={16} className="mr-2 fill-current" />
+                        Open Playlist
+                     </a>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div className="bg-white shadow overflow-hidden sm:rounded-md border border-gray-200">
               <ul className="divide-y divide-gray-200">
@@ -189,10 +213,10 @@ function App() {
                     <div className="px-4 py-4 sm:px-6 hover:bg-gray-50 transition-colors">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center">
-                          <span className="flex-shrink-0 h-8 w-8 flex items-center justify-center bg-gray-100 rounded-full text-sm font-medium text-gray-500">
+                          <span className="flex-shrink-0 h-8 w-8 flex items-center justify-center bg-gray-100 rounded-full text-sm font-bold text-gray-500">
                             {lecture.id}
                           </span>
-                          <p className="ml-4 text-lg font-medium text-blue-900 truncate">{lecture.title}</p>
+                          <p className="ml-4 text-lg font-medium text-tcd-blue truncate">{lecture.title}</p>
                         </div>
                       </div>
                       <div className="mt-4 sm:flex sm:justify-between">
@@ -201,17 +225,17 @@ function App() {
                             <React.Fragment key={idx}>
                               <a
                                 href={res.url}
-                                className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors"
+                                className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-blue-50 text-tcd-blue hover:bg-blue-100 transition-colors border border-blue-100"
                               >
-                                <FileText size={12} className="mr-1" />
+                                <FileText size={12} className="mr-1.5" />
                                 {res.type === 'slides' ? 'Slides' : res.text || 'Resource'}
                               </a>
                               {res.solution && (
                                 <a
                                   href={res.solution}
-                                  className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 hover:bg-green-200 transition-colors"
+                                  className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition-colors border border-emerald-100"
                                 >
-                                  <FileText size={12} className="mr-1" />
+                                  <FileText size={12} className="mr-1.5" />
                                   Solutions
                                 </a>
                               )}
@@ -226,85 +250,69 @@ function App() {
             </div>
             <div className="text-center text-sm text-gray-500 pt-4">
               <p>
-                Previous year slides can be found <a href="https://github.com/frcs/4C16-2425" className="text-blue-600 hover:underline">here</a>.
+                Previous year slides can be found <a href="https://github.com/frcs/4C16-2425" className="text-tcd-blue hover:underline">here</a>.
               </p>
             </div>
-            {/* Recorded Lectures Section */}
-            <div className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
-              <div className="md:flex">
-                <div className="md:flex-shrink-0">
-                  <img className="h-48 w-full object-cover md:w-64" src="./assets/slide-video.png" alt="Lecture Videos" />
-                </div>
-                <div className="p-8">
-                  <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Video Archive</div>
-                  <a href="https://goo.gl/DP2jnJ" target="_blank" rel="noreferrer" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">
-                    Watch Previous Years' Lectures
-                  </a>
-                  <p className="mt-2 text-gray-500">
-                    Catch up on key concepts or review complex topics with our archive of recorded lectures from previous years available on YouTube.
-                  </p>
-                  <div className="mt-4">
-                     <a href="https://www.youtube.com/playlist?list=PLIo1iEzl5iB9NkulNR0X5vXN8AaEKglWT" target="_blank" rel="noreferrer" className="inline-flex items-center text-red-600 hover:text-red-700 font-medium">
-                        <Play size={16} className="mr-2 fill-current" />
-                        Open Playlist
-                     </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-              
           </div>
         )}
 
         {activeTab === 'labs' && (
-          <div className="max-w-4xl mx-auto space-y-12 animate-in fade-in duration-500">
+          <div className="max-w-4xl mx-auto space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900">Lab & Resources</h2>
+              <h2 className="text-3xl font-bold text-tcd-blue">Lab & Resources</h2>
               <p className="mt-2 text-gray-600">Everything you need for the practical sessions.</p>
             </div>
 
-            <div className="bg-white shadow-sm rounded-lg border border-gray-200 overflow-hidden">
+            <div className="bg-white shadow-sm rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
                <div className="md:grid md:grid-cols-2">
-                 <div className="p-6">
+                 <div className="p-8 flex flex-col justify-center">
                     <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                      <Terminal className="mr-2 text-blue-900" /> Lab Environment
+                      <Terminal className="mr-2 text-tcd-blue" /> Lab Environment
                     </h3>
-                    <p className="text-gray-600 mb-4">
+                    <p className="text-gray-600 mb-6">
                       We have designed a unique environment specifically for this course so that students can learn best industry practices.
                       Our web platform can transparently connect students to a Google Cloud Platform cluster or Colab via web based terminal/editor/Jupyter sessions.
                     </p>
-                    <div className="bg-blue-50 border-l-4 border-blue-900 p-4">
-                      <p className="text-sm text-blue-800">
+                    <div className="bg-blue-50 border-l-4 border-tcd-blue p-4 rounded-r-md">
+                      <p className="text-sm text-tcd-blue font-medium">
                         Labs use the <strong>Keras</strong> framework and are automatically assessed using Git to give immediate feedback.
                       </p>
                     </div>
                  </div>
-                 <div className="bg-gray-50 flex items-center justify-center p-4">
-                    <img src="./assets/slide-lab-env.png" alt="Lab Environment Diagram" className="rounded shadow-sm max-w-full h-auto" />
+                 <div className="bg-gray-50 flex items-center justify-center p-8 border-l border-gray-100">
+                    <img src="./assets/slide-lab-env.png" alt="Lab Environment Diagram" className="rounded-lg shadow-sm max-w-full h-auto border border-gray-200" />
                  </div>
                </div>
             </div>
 
-            <div className="bg-white shadow-sm rounded-lg border border-gray-200 p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-6">Course Projects</h3>
-                <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="bg-white shadow-sm rounded-xl border border-gray-200 p-8 hover:shadow-md transition-shadow">
+                <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                    <GraduationCap className="mr-2 text-tcd-blue" /> Course Projects
+                </h3>
+                <div className="grid md:grid-cols-2 gap-10 items-center">
                     <img src="./assets/slide-labs.png" alt="Course Projects" className="rounded-lg shadow-sm border border-gray-100" />
                     <div>
-                        <p className="text-gray-600 mb-4">
+                        <p className="text-gray-600 mb-6 text-lg">
                             Students will work on real-world challenges including:
                         </p>
-                        <ul className="space-y-3">
+                        <ul className="space-y-4">
                             <li className="flex items-start">
-                                <ChevronRight className="flex-shrink-0 h-5 w-5 text-blue-500" />
-                                <span className="ml-2 text-gray-700">Image classification with Deep Neural Networks</span>
+                                <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5">
+                                    <ChevronRight className="h-4 w-4 text-tcd-blue" />
+                                </div>
+                                <span className="ml-3 text-gray-700 font-medium">Image classification with Deep Neural Networks</span>
                             </li>
                             <li className="flex items-start">
-                                <ChevronRight className="flex-shrink-0 h-5 w-5 text-blue-500" />
-                                <span className="ml-2 text-gray-700">Self-driving car simulation (Udacity)</span>
+                                <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5">
+                                    <ChevronRight className="h-4 w-4 text-tcd-blue" />
+                                </div>
+                                <span className="ml-3 text-gray-700 font-medium">Self-driving car simulation (Udacity)</span>
                             </li>
                             <li className="flex items-start">
-                                <ChevronRight className="flex-shrink-0 h-5 w-5 text-blue-500" />
-                                <span className="ml-2 text-gray-700">Text generation and detection with RNNs</span>
+                                <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5">
+                                    <ChevronRight className="h-4 w-4 text-tcd-blue" />
+                                </div>
+                                <span className="ml-3 text-gray-700 font-medium">Text generation and detection with RNNs</span>
                             </li>
                         </ul>
                     </div>
@@ -313,17 +321,17 @@ function App() {
 
             <div className="grid gap-6 md:grid-cols-2">
               <a href="/handouts/PreparationPython3.pdf" className="block group">
-                <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow">
-                  <h4 className="font-semibold text-gray-900 mb-2 group-hover:text-blue-600 flex items-center">
-                    Python 3 Resources <ChevronRight size={16} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm group-hover:shadow-md transition-all duration-200 group-hover:border-tcd-blue">
+                  <h4 className="font-bold text-gray-900 mb-2 group-hover:text-tcd-blue flex items-center">
+                    Python 3 Resources <ChevronRight size={16} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-tcd-blue" />
                   </h4>
                   <p className="text-sm text-gray-500">Refresher material for Python 3 prior to starting 4C16.</p>
                 </div>
               </a>
               <a href="/handouts/4c16-lab-system-handbook.pdf" className="block group">
-                <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow">
-                  <h4 className="font-semibold text-gray-900 mb-2 group-hover:text-blue-600 flex items-center">
-                    Lab System Handbook <ChevronRight size={16} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm group-hover:shadow-md transition-all duration-200 group-hover:border-tcd-blue">
+                  <h4 className="font-bold text-gray-900 mb-2 group-hover:text-tcd-blue flex items-center">
+                    Lab System Handbook <ChevronRight size={16} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-tcd-blue" />
                   </h4>
                   <p className="text-sm text-gray-500">Instructions for Lab 0 and system usage guide.</p>
                 </div>
@@ -333,41 +341,41 @@ function App() {
         )}
 
         {activeTab === 'keynotes' && (
-          <div className="space-y-10 animate-in fade-in duration-500">
+          <div className="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="border-b border-gray-200 pb-4">
-              <h2 className="text-3xl font-bold text-gray-900">Industry Keynotes</h2>
+              <h2 className="text-3xl font-bold text-tcd-blue">Industry Keynotes</h2>
               <p className="mt-2 text-gray-600">Guest lectures from leading practitioners at Google, YouTube, Movidius, and more.</p>
             </div>
 
             {keynotes.map((yearGroup, index) => (
               <div key={index} className="space-y-6">
-                <div className="flex items-center space-x-2">
-                  <h3 className="text-xl font-bold text-blue-900">{yearGroup.year} Series</h3>
-                  <div className="h-px bg-gray-200 flex-grow"></div>
+                <div className="flex items-center space-x-3">
+                  <div className="h-8 w-1 bg-tcd-blue rounded-full"></div>
+                  <h3 className="text-2xl font-bold text-gray-900">{yearGroup.year} Series</h3>
                 </div>
                 
                 <div className="grid gap-6 md:grid-cols-2">
                   {yearGroup.talks.map((talk, i) => (
-                    <div key={i} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div key={i} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow group">
                       <div className="flex justify-between items-start mb-4">
                         <div className="flex items-center space-x-3">
-                          <div className="bg-blue-100 p-2 rounded-full text-blue-700">
+                          <div className="bg-blue-50 p-2.5 rounded-full text-tcd-blue group-hover:bg-tcd-blue group-hover:text-white transition-colors">
                             <User size={20} />
                           </div>
                           <div>
                             <h4 className="font-bold text-gray-900">{talk.speaker}</h4>
-                            <span className="text-sm text-gray-500 font-medium">{talk.affiliation}</span>
+                            <span className="text-xs font-semibold uppercase tracking-wide text-gray-500">{talk.affiliation}</span>
                           </div>
                         </div>
                         {talk.date && (
-                          <div className="flex items-center text-xs text-gray-400 bg-gray-50 px-2 py-1 rounded">
-                            <Calendar size={12} className="mr-1" />
+                          <div className="flex items-center text-xs text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full">
+                            <Calendar size={12} className="mr-1.5" />
                             {talk.date}
                           </div>
                         )}
                       </div>
                       
-                      <h5 className="text-lg font-semibold text-gray-800 mb-2">{talk.title}</h5>
+                      <h5 className="text-lg font-bold text-tcd-blue mb-2">{talk.title}</h5>
                       
                       {talk.description && (
                         <p className="text-sm text-gray-600 mb-4 leading-relaxed">
@@ -377,19 +385,22 @@ function App() {
 
                       <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-50">
                         {talk.video && (
-                          <a href={talk.video} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm font-medium text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-md transition-colors">
+                          <a href={talk.video} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm font-medium text-white bg-red-600 hover:bg-red-700 px-3 py-1.5 rounded-md transition-colors shadow-sm">
                             <Play size={16} className="mr-2 fill-current" />
                             Watch Video
                           </a>
                         )}
                         {talk.slides && (
-                          <a href={talk.slides} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm font-medium text-gray-600 hover:text-gray-800 bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-md transition-colors">
+                          <a href={talk.slides} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-md transition-colors">
                             <FileText size={16} className="mr-2" />
                             Slides
                           </a>
                         )}
                         {!talk.video && !talk.slides && (
-                          <span className="text-xs text-gray-400 italic">No recording available</span>
+                          <span className="text-xs text-gray-400 italic flex items-center">
+                            <span className="w-1.5 h-1.5 bg-gray-300 rounded-full mr-2"></span>
+                            No recording available
+                          </span>
                         )}
                       </div>
                     </div>
@@ -402,11 +413,19 @@ function App() {
 
       </main>
 
-      <footer className="bg-white border-t border-gray-200 mt-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <p className="text-center text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} Trinity College Dublin. 4C16/5C16 Deep Learning.
-          </p>
+      <footer className="bg-gray-50 border-t border-gray-200 mt-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+                <div className="flex items-center space-x-4 mb-4 md:mb-0">
+                    <img src="./assets/tcd-logo.png" alt="Trinity College Dublin" className="h-10 opacity-80 grayscale hover:grayscale-0 transition-all" />
+                    <div className="h-8 w-px bg-gray-300"></div>
+                    <span className="text-sm font-semibold text-gray-500">School of Engineering</span>
+                </div>
+                <p className="text-center md:text-right text-sm text-gray-500">
+                    &copy; {new Date().getFullYear()} Trinity College Dublin.<br/>
+                    4C16/5C16 Deep Learning.
+                </p>
+            </div>
         </div>
       </footer>
     </div>
