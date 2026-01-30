@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAssetUrl } from '../utils/url';
+import tcdLogo from '../assets/tcd-logo.png';
 
 export default function Footer() {
   return (
@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="flex items-center space-x-4 mb-4 md:mb-0">
-                  <img src={getAssetUrl('assets/tcd-logo.png')} alt="Trinity College Dublin" className="h-10 opacity-80 grayscale hover:grayscale-0 transition-all" />
+                  <img src={tcdLogo} alt="Trinity College Dublin" className="h-10 opacity-80 grayscale hover:grayscale-0 transition-all" />
                   <div className="h-8 w-px bg-gray-300"></div>
                   <span className="text-sm font-semibold text-gray-500">School of Engineering</span>
               </div>

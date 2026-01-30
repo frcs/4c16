@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Terminal, GraduationCap, ChevronRight, Server } from 'lucide-react';
 import { labsContent } from '../data/content';
 import { getAssetUrl } from '../utils/url';
+import envImg from '../assets/slide-lab-env.png';
+import projectsImg from '../assets/slide-labs.png';
 
 export default function LabsTab() {
   return (
@@ -36,7 +38,7 @@ export default function LabsTab() {
               </Link>
            </div>
            <div className="bg-gray-50 flex items-center justify-center p-8 border-l border-gray-100">
-              <img src={getAssetUrl('assets/slide-lab-env.png')} alt="Lab Environment Diagram" className="rounded-lg shadow-sm max-w-full h-auto border border-gray-200" />
+              <img src={envImg} alt="Lab Environment Diagram" className="rounded-lg shadow-sm max-w-full h-auto border border-gray-200" />
            </div>
          </div>
       </div>
@@ -46,7 +48,7 @@ export default function LabsTab() {
               <GraduationCap className="mr-2 text-tcd-blue" /> {labsContent.projects.title}
           </h3>
           <div className="grid md:grid-cols-2 gap-10 items-center">
-              <img src={getAssetUrl('assets/slide-labs.png')} alt="Course Projects" className="rounded-lg shadow-sm border border-gray-100" />
+              <img src={projectsImg} alt="Course Projects" className="rounded-lg shadow-sm border border-gray-100" />
               <div>
                   <p className="text-gray-600 mb-6 text-lg">
                       {labsContent.projects.intro}

@@ -1,7 +1,8 @@
 import React from 'react';
 import { GraduationCap, Terminal, User } from 'lucide-react';
 import { homeContent } from '../data/content';
-import { getAssetUrl } from '../utils/url';
+import xkcdImg from '../assets/machine_learning.png';
+import francoisImg from '../assets/FrancoisPitie.jpg';
 
 export default function HomeTab() {
   return (
@@ -51,7 +52,7 @@ export default function HomeTab() {
 
           <div className="flex flex-col items-center">
             <figure>
-              <img src={getAssetUrl('assets/machine_learning.png')} alt="XKCD Machine Learning Comic" className="max-w-xs w-full rounded-lg shadow-sm border border-gray-200" />
+              <img src={xkcdImg} alt="XKCD Machine Learning Comic" className="max-w-xs w-full rounded-lg shadow-sm border border-gray-200" />
               <figcaption className="text-center mt-2">
                 <a href="https://xkcd.com/1838/" target="_blank" rel="noreferrer" className="text-xs text-gray-400 hover:text-tcd-blue transition-colors">
                   https://xkcd.com/1838/
@@ -73,8 +74,8 @@ export default function HomeTab() {
                 <div key={idx} className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
                     <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center border border-gray-200 text-gray-400 shadow-sm overflow-hidden">
-                      {person.image ? (
-                        <img src={getAssetUrl(person.image)} alt={person.name} className="w-full h-full object-cover" />
+                      {person.name.includes("François") ? (
+                        <img src={francoisImg} alt={person.name} className="w-full h-full object-cover" />
                       ) : (
                         <User size={32} />
                       )}
