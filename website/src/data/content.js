@@ -1,11 +1,11 @@
 export const homeContent = {
   title: "Deep Learning & its Applications",
-  intro: `This module is an introduction course to Machine Learning (ML), with a focus on Deep Learning. The course is offered by the Electronic & Electrical Engineering department to the fourth and fifth year students of Trinity College Dublin. In this module, you will learn the foundations of Machine Learning, Deep Learning, understand how to build neural networks, and learn the building components of modern AI.`,
+  intro: `This module provides a comprehensive introduction to Machine Learning (ML), with a specialised focus on the architecture and power of Deep Learning. Offered by the Department of Electronic & Electrical Engineering, the course is designed for fourth and fifth-year students at Trinity College Dublin looking to master the technology defining the modern era.`,
   modernCurriculum: "From Least Squares to Transformers. The material is constructed in collaboration with leading industrial practitioners including Google, YouTube, and Intel.",
   handsOnLabs: "Unique environment connecting to Colab. Labs use PyTorch are automatically assessed using Git.",
   courseOverview: {
     title: "Course Overview",
-      p1: "Deep Learning is at the core of the AI revolution. When you read or hear about AI or machine Learning successes in the news, it really means Deep Learning successes.",
+      p1: "Deep Learning is the engine driving the current AI revolution. When you witness the breakthroughs defining our world—from the creative leaps of Generative AI to the sophisticated reasoning of AI Assistants like ChatGPT—you are seeing Deep Learning in action. This course moves beyond the hype, teaching you the fundamental principles behind the models that are reshaping industry and society alike.",
     p2: "The course starts with an introduction to essential aspects of Machine Learning, including Least Squares, Logistic Regression and popular classification techniques. Then it dives into Neural Nets, including Feed Forward, CNNs, RNNs, and Transformers."
   },
   instructors: {

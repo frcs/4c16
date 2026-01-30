@@ -12,7 +12,7 @@ export default function Footer() {
               </div>
               <p className="text-center md:text-right text-sm text-gray-500">
                   &copy; {new Date().getFullYear()} François Pitié.<br/>
-                  EEU44C16/EE5C16 Deep Learning.
+                  EEU44C16/EE5C16.
               </p>
           </div>
       </div>
