@@ -2,7 +2,7 @@ import React from 'react';
 import { BookOpen, FileText, Play } from 'lucide-react';
 import { lectures } from '../data/lectures';
 import { getAssetUrl } from '../utils/url';
-import videoImg from '../assets/slide-video.png';
+import videoImg from '../assets/videos.jpg';
 
 export default function LecturesTab() {
   return (
