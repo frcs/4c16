@@ -1,7 +1,12 @@
 export const getAssetUrl = (path) => {
-  const base = import.meta.env.BASE_URL;
-  // Ensure base ends with / and path doesn't start with /
-  const cleanBase = base.endsWith('/') ? base : `${base}/`;
-  const cleanPath = path.startsWith('./') ? path.slice(2) : (path.startsWith('/') ? path.slice(1) : path);
-  return `${cleanBase}${cleanPath}`;
+  const base = import.meta.env.BASE_URL || '/';
+  
+  // Clean up path: remove leading ./ or /
+  const cleanPath = path.replace(/^(\.\/|\/)/, '');
+  
+  // Combine base and path, ensuring exactly one slash between them
+  const combined = `${base.replace(/\/$/, '')}/${cleanPath}`;
+  
+  // Final safety: ensure we don't have double slashes (except protocol if any)
+  return combined.replace(/([^:]\/)\/+/g, "$1");
 };
