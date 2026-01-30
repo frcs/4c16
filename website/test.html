@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography Test: Deep Learning</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-main: #1a1a1a;
+            --text-sub: #555;
+            --accent: #0066ff;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            gap: 4rem;
+        }
+
+        .container {
+            text-align: left;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        /* --- STYLE 1: MODERN TECH --- */
+        .tech-style {
+            font-family: 'Inter', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+            margin: 0;
+        }
+
+        .tech-style .subtitle {
+            display: block;
+            font-weight: 400;
+            font-size: 0.8em;
+            color: var(--text-sub);
+            margin-top: 0.25rem;
+        }
+
+        /* --- STYLE 2: ACADEMIC AUTHORITY --- */
+        .academic-style {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            line-height: 1.1;
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        .academic-style .subtitle {
+            display: block;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            font-size: 0.5em;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-top: 0.5rem;
+            color: #7f8c8d;
+        }
+
+        /* The Special Ampersand Trick */
+        .amp {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 400;
+            margin-right: 0.1em;
+            color: var(--accent);
+        }
+
+        hr {
+            width: 100%;
+            border: 0;
+            border-top: 1px solid #ddd;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <label>Option 1: Modern Tech (Inter)</label>
+        <h1 class="tech-style">
+            Deep Learning
+            <span class="subtitle">& Its Applications</span>
+        </h1>
+    </div>
+
+    <hr style="max-width: 600px;">
+
+    <div class="container">
+        <label>Option 2: Academic Authority (Playfair)</label>
+        <h1 class="academic-style">
+            Deep Learning
+            <span class="subtitle"><span class="amp">&</span> Its Applications</span>
+        </h1>
+    </div>
+
+</body>
+</html>
