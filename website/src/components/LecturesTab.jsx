@@ -46,7 +46,7 @@ export default function LecturesTab() {
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 group">
         <div className="md:flex">
           <div className="md:flex-shrink-0 relative overflow-hidden">
-            <img className="h-48 w-full object-cover md:w-72 transition-transform duration-500 group-hover:scale-105" src={videoImg} alt="Lecture Videos" />
+            <img className=" w-full object-cover md:w-72 transition-transform duration-500 group-hover:scale-105" src={videoImg} alt="Lecture Videos" />
             <div className="absolute inset-0 bg-black bg-opacity-10 group-hover:bg-opacity-0 transition-opacity"></div>
           </div>
           <div className="p-8 flex flex-col justify-center">
