@@ -51,7 +51,7 @@ export default function LecturesTab() {
           </div>
           <div className="p-8 flex flex-col justify-center">
             <div className="uppercase tracking-wide text-xs text-tcd-blue font-bold">Video Archive</div>
-            <a href="https://goo.gl/DP2jnJ" target="_blank" rel="noreferrer" className="block mt-1 text-xl leading-tight font-bold text-gray-900 hover:text-tcd-blue transition-colors">
+            <a href="https://www.youtube.com/playlist?list=PLIo1iEzl5iB9NkulNR0X5vXN8AaEKglWT" target="_blank" rel="noreferrer" className="block mt-1 text-xl leading-tight font-bold text-gray-900 hover:text-tcd-blue transition-colors">
               Watch Previous Years' Lectures
             </a>
             <p className="mt-2 text-gray-600">
