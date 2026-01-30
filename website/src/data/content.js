@@ -7,6 +7,22 @@ export const homeContent = {
     title: "Course Overview",
       p1: "Deep Learning is at the core of the AI revolution. When you read or hear about AI or machine Learning successes in the news, it really means Deep Learning successes.",
     p2: "The course starts with an introduction to essential aspects of Machine Learning, including Least Squares, Logistic Regression and popular classification techniques. Then it dives into Neural Nets, including Feed Forward, CNNs, RNNs, and Transformers."
+  },
+  instructors: {
+    title: "Teaching Team",
+    people: [
+      {
+        name: "Asst. Prof. François Pitié",
+        role: "Course Coordinator",
+        image: "./assets/slide-team.png", // Re-using the team slide image as a generic placeholder or we can crop it later if needed. For now, maybe just no image or a generic avatar.
+        link: "https://www.tcd.ie/research/profiles/?profile=pitief"
+      },
+      {
+        name: "Demonstrators",
+        role: "Teaching Assistants",
+        description: "PhD students from the SIGMEDIA research group."
+      }
+    ]
   }
 };
 
