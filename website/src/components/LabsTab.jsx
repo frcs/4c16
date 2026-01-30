@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Terminal, GraduationCap, ChevronRight, Server } from 'lucide-react';
 import { labsContent } from '../data/content';
 import { getAssetUrl } from '../utils/url';
-import envImg from '../assets/slide-lab-env.png';
+import envImg from '../assets/lab-env.jpg';
 import projectsImg from '../assets/slide-labs.png';
 
 export default function LabsTab() {
