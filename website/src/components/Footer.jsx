@@ -11,8 +11,8 @@ export default function Footer() {
                   <span className="text-sm font-semibold text-gray-500">School of Engineering</span>
               </div>
               <p className="text-center md:text-right text-sm text-gray-500">
-                  &copy; {new Date().getFullYear()} Trinity College Dublin.<br/>
-                  4C16/5C16 Deep Learning.
+                  &copy; {new Date().getFullYear()} François Pitié.<br/>
+                  EEU44C16/EE5C16 Deep Learning.
               </p>
           </div>
       </div>

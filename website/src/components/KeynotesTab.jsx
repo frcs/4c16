@@ -8,7 +8,7 @@ export default function KeynotesTab() {
     <div className="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="border-b border-gray-200 pb-4">
         <h2 className="text-3xl font-bold text-tcd-blue">Industry Keynotes</h2>
-        <p className="mt-2 text-gray-600">Guest lectures from leading practitioners at Google, YouTube, Movidius, and more.</p>
+        <p className="mt-2 text-gray-600">Guest lectures from previous years.</p>
       </div>
 
       {keynotes.map((yearGroup, index) => (
