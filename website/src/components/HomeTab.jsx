@@ -63,20 +63,23 @@ export default function HomeTab() {
         <div className="lg:w-2/5 space-y-8">
           <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 sticky top-24">
             <h2 className="text-2xl font-bold text-tcd-blue mb-6 border-b border-gray-200 pb-2">
-              {homeContent.instructors.title}
+              Instructors
             </h2>
             
-            <div className="space-y-6">
-              {homeContent.instructors.people.map((person, idx) => (
-                <div key={idx} className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-gray-200 text-gray-400 shadow-sm">
-                      <User size={24} />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 leading-tight">
-                      {person.link ? (
+                        <div className="space-y-6">
+                          {homeContent.instructors.people.map((person, idx) => (
+                            <div key={idx} className="flex items-start space-x-4">
+                              <div className="flex-shrink-0">
+                                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center border border-gray-200 text-gray-400 shadow-sm overflow-hidden">
+                                  {person.image ? (
+                                    <img src={person.image} alt={person.name} className="w-full h-full object-cover" />
+                                  ) : (
+                                    <User size={32} />
+                                  )}
+                                </div>
+                              </div>
+                              <div className="pt-2">
+                                <h3 className="text-lg font-bold text-gray-900 leading-tight">                      {person.link ? (
                         <a href={person.link} target="_blank" rel="noreferrer" className="hover:text-tcd-blue hover:underline decoration-2 underline-offset-2 transition-all">
                           {person.name}
                         </a>
@@ -93,15 +96,15 @@ export default function HomeTab() {
               ))}
             </div>
 
-            {/* Team Photo */}
+            {/* Team Photo 
             <div className="mt-8 pt-6 border-t border-gray-200">
-              <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">The Team</h4>
+              <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Instructor</h4>
               <img 
                 src="./assets/slide-team.png" 
                 alt="4C16 Team" 
                 className="w-full rounded-lg shadow-sm border border-gray-200 bg-white"
               />
-            </div>
+            </div>*/}
           </div>
         </div>
       </div>

@@ -13,14 +13,15 @@ export const homeContent = {
     people: [
       {
         name: "Asst. Prof. François Pitié",
-        role: "Course Coordinator",
-        image: "./assets/slide-team.png", // Re-using the team slide image as a generic placeholder or we can crop it later if needed. For now, maybe just no image or a generic avatar.
+        role: "Module Coordinator",
+        image: "./assets/FrancoisPitie.jpg",
         link: "https://www.tcd.ie/research/profiles/?profile=pitief"
       },
       {
         name: "Demonstrators",
         role: "Teaching Assistants",
-        description: "PhD students from the SIGMEDIA research group."
+        description: "PhD students from the SIGMEDIA research group.",
+        link: "https://sigmedia.tv"         
       }
     ]
   }
