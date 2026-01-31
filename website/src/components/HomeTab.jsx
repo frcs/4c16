@@ -9,7 +9,7 @@ export default function HomeTab() {
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
       
       {/* Title Section - Full Width */}
-      <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl mb-8 leading-tight">
+      <h1 className="text-2xl font-extrabold tracking-tight sm:text-5xl mb-8 leading-tight">
         <span className="block text-tcd-blue font-extrabold">Deep Learning</span>
         <span className="block text-[0.8em] font-medium text-gray-500 mt-3 italic">
           & Its Applications
@@ -20,13 +20,13 @@ export default function HomeTab() {
         {/* Left Column: Main Prose (60%) */}
         <div className="lg:w-3/5 space-y-12">
           <section className="prose prose-blue max-w-none text-gray-600">
-            <p className="text-xl leading-relaxed">
+            <p className="text-xg leading-relaxed">
               This module is comprehensive introduction course to Machine Learning (ML), with a specialised focus on the architecture and power of Deep Learning. Offered by the Department of <a href="https://www.tcd.ie/eleceng/" className="text-tcd-blue hover:underline mx-1 font-semibold">Electronic & Electrical Engineering</a>, the course is designed for fourth and fifth-year students at <a href="https://www.tcd.ie" className="text-tcd-blue hover:underline mx-1 font-semibold">Trinity College Dublin</a> looking to master the technology defining the modern era.
             </p>
-            <p className="text-xl leading-relaxed mt-3">
+            <p className="text-xg leading-relaxed mt-3">
               Deep Learning is the engine of the AI revolution. Whether it is the creative power of Generative AI or the reasoning capabilities of AI assistants like ChatGPT, modern breakthroughs are, at their core, Deep Learning successes. This course moves beyond the headlines to show you how these systems actually work.
             </p>
-            <p className="text-xl leading-relaxed mt-3">
+            <p className="text-xg leading-relaxed mt-3">
               We begin with the foundations—Least Squares, Logistic Regression, and core classification—before diving into the neural architectures defining the future: from CNNs for computer vision to the Transformers that underpin today’s Large Language Models.
             </p>
           </section>
