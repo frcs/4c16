@@ -1,5 +1,53 @@
 export const keynotes = [
   {
+    year: '2024/25',
+      talks: [
+          {
+              speaker: 'Prof Rajeev Jain',
+              affiliation: 'Qualcomm',
+              title: 'Research Problems of Machine Learning in Application to Chip Design.',
+              date: 'Nov 25th',
+              description: 'Senior Director of Technology at Qualcomm.',
+          }
+      ]
+  },
+  {
+    year: '2021/22',
+      talks: [
+          {
+              speaker: 'Prof Dave Lewis',
+              affiliation: 'Trinity Colleg Dublin',
+              title: 'Ethics of AI and Data Governance',
+              date: 'Nov 8th',
+              slides: '/keynotes/4c16-keynote-8-11-2021-Dave_Lewis-TCD.pdf',
+          },
+      ]
+  },    
+  {
+    year: '2020/21',
+      talks: [
+          {
+              speaker: 'Prof Dave Lewis',
+              affiliation: 'Trinity Colleg Dublin',
+              title: 'Machine-Learning Based Design Optimization',
+              date: 'Dec 3rd',
+              slides: '/keynotes/4c16-keynote-3-12-2020-Dave_Lewis-TCD.pdf',
+          },
+    ],
+  },
+  {
+    year: '2019/20',
+      talks: [
+          {
+              speaker: 'Prof Rajeev Jain',
+              affiliation: 'Qualcomm',
+              title: 'Machine-Learning Based Design Optimization',
+              date: 'Nov 25th',
+              description: 'Senior Director of Technology at Qualcomm.',          
+          },
+      ],
+  },
+  {
     year: '2018/19',
     talks: [
       {
@@ -32,7 +80,7 @@ export const keynotes = [
         date: 'Nov 28th',
         description: 'Tech Lead / Manager at Google, focusing on lossy image compression and beyond.',
       },
-    ]
+    ],
   },
   {
     year: '2017/18',
