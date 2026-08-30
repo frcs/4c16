@@ -139,7 +139,7 @@ export default function LabSystemTab() {
             </ul>
           </li>
           <li>
-            <strong>Dashboard & Leaderboard Feedback:</strong> Within 10 seconds of pushing, you can refresh your dashboard at <a href={labSystemContent.platformUrl} target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-medium hover:underline">4c16.dev</a> to view your granular test breakdown, unit test pass/fail indicators, and full execution logs. For competitive miniprojects, your score also updates your position on the class leaderboard.
+            <strong>Dashboard Feedback & Scores:</strong> Within 10 seconds of pushing, you can refresh your dashboard at <a href={labSystemContent.platformUrl} target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-medium hover:underline">4c16.dev</a> to view your granular test breakdown, unit test pass/fail indicators, and full execution logs.
           </li>
           <li>
             <strong>Iterate Freely Before the Deadline:</strong> There is no penalty for multiple submissions. You are encouraged to inspect test failures, debug your code, retrain with improved hyperparameters, and push again as many times as you like before the deadline.

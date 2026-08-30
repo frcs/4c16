@@ -61,7 +61,7 @@ export default function HistoryTab() {
         </p>
 
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">
-          Second, we wanted students to work on real, uncurated datasets where they could experiment with different network architectures, tune hyperparameters, and learn from things that fail on the first attempt.
+          Second, we wanted students to work on real-world datasets where they could experiment with different network architectures, tune hyperparameters, and learn from things that fail on the first attempt.
         </p>
 
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">
@@ -184,7 +184,7 @@ export default function HistoryTab() {
    * Student repositories                        |
    * Trinity Single Sign-On                      v
    * Webhook on push -------------->   [ FastAPI Web Portal ]
-                                       * Dashboards & leaderboard
+                                       * Student dashboards & scores
                                        * Course admin & submissions
                                                  |
                                                  | Enqueues job & serves data
@@ -208,7 +208,7 @@ export default function HistoryTab() {
             For version control and identity, we use <a href="https://forgejo.org/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">Forgejo</a> (a lightweight, self-hosted Git server). It hosts each student's private repository, manages Single Sign-On, and automatically dispatches push webhooks to the backend whenever new commits arrive.
           </p>
           <p>
-            The web portal is built with <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">FastAPI</a> in Python with server-rendered templates. It provides student progress dashboards, submission histories, and real-time leaderboards, alongside streamlined administrative interfaces for instructors to manage modules and releases.
+            The web portal is built with <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">FastAPI</a> in Python with server-rendered templates. It provides student progress dashboards, submission histories, and test breakdowns, alongside streamlined administrative interfaces for instructors to monitor cohort progress, manage modules, and coordinate releases.
           </p>
           <p>
             Rather than adding separate queuing infrastructure like Redis or RabbitMQ, we use <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">PostgreSQL</a> for both persistent application data and the asynchronous job queue. When a student pushes code, FastAPI enqueues an evaluation job directly into the database.
@@ -230,7 +230,7 @@ export default function HistoryTab() {
         </p>
 
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">
-          It also makes open-ended challenges feasible. For advanced labs, students work on uncurated datasets, such as image classification, natural language processing, and semantic segmentation, and compete on a class leaderboard. Because they can test changes quickly, students voluntarily submit dozens of iterations to try out different ideas.
+          It also makes open-ended challenges feasible. For advanced labs, students work on real-world problems and datasets, such as image classification, natural language processing, and semantic segmentation. Because they can test changes quickly, students voluntarily submit dozens of iterations to try out different ideas.
         </p>
 
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">

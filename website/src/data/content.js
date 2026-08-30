@@ -73,7 +73,7 @@ export const labSystemContent = {
     {
       title: "Beyond 'Cookbook' Labs",
       problem: "Prescriptive step-by-step labs tend to reward passive compliance rather than developing genuine problem-solving intuition.",
-      solution: "Immediate automated testing allows students to tackle open-ended machine learning challenges on uncurated datasets, testing creative architectures and submitting multiple iterations."
+      solution: "Immediate automated testing allows students to tackle open-ended machine learning challenges on real-world datasets, testing creative architectures and submitting multiple iterations."
     },
     {
       title: "Immediate Programmatic Feedback",
@@ -83,11 +83,12 @@ export const labSystemContent = {
     {
       title: "Focus on Continuous Oral Vivas",
       problem: "Teaching assistants often spend the bulk of contact hours manually checking syntax, file paths, and output shapes.",
-      solution: "Automating routine correctness checks liberates demonstrators and faculty to conduct oral vivas, engaging students in discussions about model trade-offs, regularization, and design choices."
+      solution: "Automating execution verification shifts contact time to deep technical discussions, where students defend their model design choices during in-person oral vivas."
     }
   ],
   architecture: {
-    title: "Current System Architecture (Generation 3, 2025–Present)",
+    title: "Current System Architecture (Generation 3, 2026 - Present)",
+    summary: "The current platform is a lightweight, self-hosted containerised micro-platform operating at 4c16.dev as 5 Docker containers via docker compose on a single host. No Kubernetes or external message brokers are required.",
     philosophy: "Every component must justify its operational existence and be maintainable by a single operator with minimal friction.",
     workflowSteps: [
       {
@@ -137,8 +138,8 @@ export const labSystemContent = {
       {
         name: "FastAPI Application Portal",
         role: "Web interface & assessment API",
-        description: "Built with Python 3.12, providing async API endpoints and server-rendered dashboards (Jinja2 + Pico CSS). Manages student results, live challenge leaderboards, administrative enrollment sync, and commit-history plagiarism detection based on blob hashing.",
-        tech: ["Python 3.12", "Jinja2 / Pico CSS", "Plagiarism Auditing"]
+        description: "Built with Python 3.13, providing async API endpoints and server-rendered dashboards (Jinja2). Manages student results, cohort progress tracking, administrative enrollment sync, and course releases.",
+        tech: ["Python 3.13", "Jinja2 Templates", "Course Admin & Releases"]
       },
       {
         name: "PostgreSQL 16 Database & Atomic Queue",
