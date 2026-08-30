@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Terminal, GraduationCap, ChevronRight, Server } from 'lucide-react';
 import { labsContent } from '../data/content';
-import { getAssetUrl } from '../utils/url';
 import envImg from '../assets/lab-env.jpg';
 import projectsImg from '../assets/slide-labs.png';
 
@@ -29,11 +28,11 @@ export default function LabsTab() {
                 </p>
               </div>
               <Link 
-                to="/LabSystem"
+                to="/lab-system"
                 className="inline-flex items-center text-sm font-bold text-tcd-blue hover:text-tcd-blue-dark transition-colors group"
               >
                 <Server size={16} className="mr-2" />
-                Learn more about the infrastructure
+                Lab System: Student Guide & Handbook
                 <ChevronRight size={16} className="ml-1 transition-transform group-hover:translate-x-1" />
               </Link>
            </div>
@@ -67,23 +66,23 @@ export default function LabsTab() {
           </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        <a href={getAssetUrl('handouts/PreparationPython3.pdf')} className="block group">
-          <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm group-hover:shadow-md transition-all duration-200 group-hover:border-tcd-blue">
-            <h4 className="font-bold text-gray-900 mb-2 group-hover:text-tcd-blue flex items-center">
-              Python 3 Resources <ChevronRight size={16} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-tcd-blue" />
-            </h4>
-            <p className="text-sm text-gray-500">Refresher material for Python 3 prior to starting 4C16.</p>
-          </div>
-        </a>
-        <a href={getAssetUrl('handouts/4c16-lab-system-handbook.pdf')} className="block group">
-          <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm group-hover:shadow-md transition-all duration-200 group-hover:border-tcd-blue">
-            <h4 className="font-bold text-gray-900 mb-2 group-hover:text-tcd-blue flex items-center">
-              Lab System Handbook <ChevronRight size={16} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-tcd-blue" />
-            </h4>
-            <p className="text-sm text-gray-500">Instructions for Lab 0 and system usage guide.</p>
-          </div>
-        </a>
+      {/* Student Guide Banner */}
+      <div className="bg-blue-50/60 border border-blue-100 rounded-xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <h4 className="font-semibold text-gray-900 text-base">
+            4C16 Lab System: Student Guide
+          </h4>
+          <p className="text-sm text-gray-600 mt-1">
+            Learn how your Colab environment, Trinity Google Drive, Forgejo Git repository, and autograding pipeline work together.
+          </p>
+        </div>
+        <Link
+          to="/lab-system"
+          className="flex-shrink-0 inline-flex items-center px-4 py-2 rounded-lg bg-tcd-blue text-white font-medium text-sm hover:bg-tcd-blue-dark transition-colors shadow-xs"
+        >
+          Open Student Guide
+          <ChevronRight size={16} className="ml-1.5" />
+        </Link>
       </div>
     </div>
   );
