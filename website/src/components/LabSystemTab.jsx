@@ -97,7 +97,7 @@ export default function LabSystemTab() {
               Persistent Storage: Trinity Google Drive
             </h3>
             <p className="text-xs sm:text-sm text-gray-600 mt-1 leading-relaxed">
-              Free Colab instances are ephemeral—when your session disconnects, temporary files on the virtual machine are wiped. To preserve your work, our workflow mounts your institutional Trinity Google Drive. All of your Jupyter notebooks, code scripts, datasets, and trained model checkpoints (<code className="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono border border-slate-200">.pt</code> / <code className="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono border border-slate-200">.pth</code> files) are stored directly on your Drive, ensuring that your work is safe across restarts.
+              Free Colab instances are ephemeral: when your session disconnects, temporary files on the virtual machine are wiped. To preserve your work, our workflow mounts your institutional Trinity Google Drive. All of your Jupyter notebooks, code scripts, datasets, and trained model checkpoints (<code className="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono border border-slate-200">.pt</code> / <code className="text-xs bg-slate-100 px-1 py-0.5 rounded font-mono border border-slate-200">.pth</code> files) are stored directly on your Drive, ensuring that your work is safe across restarts.
             </p>
           </div>
 

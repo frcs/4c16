@@ -157,7 +157,7 @@ export const labSystemContent = {
   generations: [
     {
       gen: "Generation 1",
-      period: "2017 – 2020",
+      period: "2017 - 2020",
       title: "GCP Cluster, Gitolite & Synchronous Hooks",
       architects: "Architected and built by Dr. Hugh Denman",
       stack: "Gitolite over SSH, Ruby on Rails 5.1, PostgreSQL 9.6, Google Cloud Platform compute instances",
@@ -166,19 +166,19 @@ export const labSystemContent = {
     },
     {
       gen: "Generation 2",
-      period: "2021 – 2024",
-      title: "Decoupled Cloud Compute: Colab & Drive",
+      period: "2021 - 2025",
+      title: "Colab Compute, Google Drive & Caddy HTTPS",
       architects: "Architected by Dr. Vibhoothi",
-      stack: "Google Colab GPU runtimes, Trinity Google Drive storage, Custom Jupyter Git orchestration notebook",
-      summary: "To address hardware disparity sustainably and give students experience with Google Colab (which Google had recently launched and which students could continue using in their research and careers), Dr. Vibhoothi re-architected the student workflow around Colab GPUs and institutional Trinity Google Drive accounts. A custom orchestration notebook (4c16-git-workflow.ipynb) bridged Colab with remote Git servers via the Python kernel.",
+      stack: "Google Colab GPU runtimes, Trinity Google Drive storage, Git workflow notebook, Gitolite & Rails backend, Caddy for HTTPS",
+      summary: "To address hardware disparity sustainably and give students experience with Google Colab (which Google had recently launched and which students could continue using in their research and careers), Dr. Vibhoothi re-architected the student workflow around Colab GPUs and institutional Trinity Google Drive accounts. A custom orchestration notebook (4c16-git-workflow.ipynb) bridged Colab with remote Git servers via the Python kernel, with Caddy handling HTTPS.",
       lessons: "Completely eliminated local GPU hardware barriers and allowed the module to expand from 70 to over 150 students across engineering and computer science without dedicated university GPU hardware."
     },
     {
       gen: "Generation 3",
-      period: "2025 – Present",
-      title: "Platform Overhaul & Scalable Operations",
+      period: "2026 - Present",
+      title: "Containerized Stack on 4c16.dev",
       architects: "Architected by Dr. Vibhoothi (Major Platform Upgrade)",
-      stack: "Caddy (Auto-TLS), Forgejo (Git/OAuth2), FastAPI (Python 3.12), PostgreSQL 16, Async Docker Workers",
+      stack: "Forgejo Git, FastAPI, PostgreSQL 16 Job Queue, Caddy (Auto-TLS), Sandboxed Docker Grading Workers",
       summary: "A major overhaul led by Dr. Vibhoothi to replace complex CLI maintenance operations with automated web administration and prepare the infrastructure to scale for an upcoming expansion to a 3rd-year module in 2027/28. Running on 4c16.dev as 5 Docker containers on a single host with automated dashboards, asynchronous queues, and sub-10s evaluations.",
       lessons: "Drastically simplified day-to-day operations for course instructors, eliminated manual CLI friction, and ensured reliable scaling across multiple cohorts and modules."
     }

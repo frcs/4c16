@@ -53,7 +53,7 @@ export default function HistoryTab() {
         </h2>
         
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">
-          When we launched <strong>EEU44C16 / EE5C16 (Deep Learning and its Applications)</strong> in 2017—Ireland's first undergraduate deep learning module—we ran into three practical problems.
+          When we launched <strong>EEU44C16 / EE5C16 (Deep Learning and its Applications)</strong> in 2017 as Ireland's first undergraduate deep learning module, we ran into three practical problems.
         </p>
 
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">
@@ -78,7 +78,7 @@ export default function HistoryTab() {
           >
             Sal Khan
           </a>
-          , mastery learning means giving students the time and freedom to practice until they truly grasp a concept before moving forward. By having an automated system verify baseline code immediately, students can submit dozens of iterations, explore ambitious models, and pick up real software engineering habits (Git, unit testing, CI) along the way.
+          , mastery learning means giving students the time and freedom to practice until they truly grasp a concept before moving forward. By having an automated system verify baseline code immediately, students can submit dozens of iterations, explore ambitious models, and pick up real software engineering habits (<a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-medium hover:underline">Git</a>, unit testing, CI) along the way.
         </p>
 
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">
@@ -100,46 +100,46 @@ export default function HistoryTab() {
         <div className="my-6 border-l border-slate-300 pl-4 space-y-4">
           <div>
             <div className="text-[11px] font-mono font-medium text-slate-500 uppercase tracking-wider">
-              Generation 1 (2017–2020) • Architect: Dr. Hugh Denman
+              Generation 1 (2017-2020) • Architect: Dr. Hugh Denman
             </div>
             <div className="font-semibold text-gray-900 text-sm mt-0.5">
               GCP Virtual Cluster & Synchronous Shell Hooks
             </div>
             <p className="text-xs sm:text-sm text-gray-600 mt-0.5">
-              Gitolite over SSH • Ruby on Rails 5.1 • PostgreSQL 9.6 • Synchronous post-receive hooks • ~€10k Google Cloud Grants
+              <a href="https://gitolite.com/gitolite/" target="_blank" rel="noopener noreferrer" className="hover:underline text-tcd-blue">Gitolite</a> over SSH • <a href="https://rubyonrails.org/" target="_blank" rel="noopener noreferrer" className="hover:underline text-tcd-blue">Ruby on Rails 5.1</a> • <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer" className="hover:underline text-tcd-blue">PostgreSQL 9.6</a> • Synchronous post-receive hooks • ~€10k <a href="https://cloud.google.com/" target="_blank" rel="noopener noreferrer" className="hover:underline text-tcd-blue">GCP</a> Grants
             </p>
           </div>
 
           <div>
             <div className="text-[11px] font-mono font-medium text-tcd-blue uppercase tracking-wider">
-              Generation 2 (2021–2024) • Architect: Dr. Vibhoothi
+              Generation 2 (2021-2025) • Architect: Dr. Vibhoothi
             </div>
             <div className="font-semibold text-gray-900 text-sm mt-0.5">
-              Moving to Colab and Google Drive
+              Colab GPU Compute, Google Drive & Caddy HTTPS
             </div>
             <p className="text-xs sm:text-sm text-gray-600 mt-0.5">
-              Google Colab GPU runtimes • Trinity Google Drive storage • Custom Jupyter Git orchestration notebook
+              <a href="https://colab.research.google.com/" target="_blank" rel="noopener noreferrer" className="hover:underline text-tcd-blue">Google Colab</a> GPUs • Trinity Google Drive storage • Git workflow notebook • Gitolite & Rails backend • <a href="https://caddyserver.com/" target="_blank" rel="noopener noreferrer" className="hover:underline text-tcd-blue">Caddy</a> for HTTPS
             </p>
           </div>
 
           <div>
             <div className="text-[11px] font-mono font-medium text-slate-700 uppercase tracking-wider">
-              Generation 3 (2026–Present) • Architect: Dr. Vibhoothi (Major Upgrade)
+              Generation 3 (2026-Present) • Architect: Dr. Vibhoothi (Major Upgrade)
             </div>
             <div className="font-semibold text-gray-900 text-sm mt-0.5">
-              Platform Overhaul & Scalable Operations on 4c16.dev
+              Containerized Stack on 4c16.dev
             </div>
             <p className="text-xs sm:text-sm text-gray-600 mt-0.5">
-              Simplified operations • Web-based management • Scaling for upcoming 3rd-year module expansion
+              <a href="https://forgejo.org/" target="_blank" rel="noopener noreferrer" className="hover:underline text-tcd-blue">Forgejo</a> Git • <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer" className="hover:underline text-tcd-blue">FastAPI</a> • <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer" className="hover:underline text-tcd-blue">PostgreSQL 16</a> Queue • <a href="https://caddyserver.com/" target="_blank" rel="noopener noreferrer" className="hover:underline text-tcd-blue">Caddy</a> • <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" className="hover:underline text-tcd-blue">Docker</a> Autograding Sandboxes
             </p>
           </div>
         </div>
 
         <h3 className="text-base font-semibold text-gray-900 mt-6 mb-2">
-          Generation 1 (2017–2020): GCP and Synchronous Shell Hooks
+          Generation 1 (2017-2020): GCP and Synchronous Shell Hooks
         </h3>
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">
-          In 2017, Hugh Denman (then recently back from Google) built the first version on Google Cloud Platform, funded by ~€10,000 in GCP educational grants. It used Gitolite over SSH for student repositories, backed by a Ruby on Rails application and PostgreSQL. Students interacted directly through a browser-based terminal and file editor, avoiding any local machine setup.
+          In 2017, Hugh Denman (then recently back from Google) built the first version on <a href="https://cloud.google.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-medium hover:underline">Google Cloud Platform</a>, funded by ~€10,000 in GCP educational grants. It used <a href="https://gitolite.com/gitolite/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-medium hover:underline">Gitolite</a> over SSH for student repositories, backed by a <a href="https://rubyonrails.org/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-medium hover:underline">Ruby on Rails</a> application and <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-medium hover:underline">PostgreSQL</a>. Students interacted directly through a browser-based terminal and file editor, avoiding any local machine setup.
         </p>
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">
           Grading was synchronous: when a student ran <code className="text-xs bg-slate-100 text-slate-700 px-1 py-0.5 rounded font-mono border border-slate-200">git push</code>, a <code className="text-xs bg-slate-100 text-slate-700 px-1 py-0.5 rounded font-mono border border-slate-200">post-receive</code> hook intercepted the commit, ran an assessment script in an isolated runtime, and printed the test results right back to the student's terminal before the push exited.
@@ -149,29 +149,32 @@ export default function HistoryTab() {
         </p>
 
         <h3 className="text-base font-semibold text-gray-900 mt-6 mb-2">
-          Generation 2 (2021–2024): Moving to Colab and Google Drive
+          Generation 2 (2021-2025): Moving to Colab, Google Drive, and Caddy
         </h3>
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">
           While synchronous hooks worked well for small cohorts, they had real limits. Right before deadlines, simultaneous pushes queued up and led to timeouts. At the same time, managing custom GCP virtual machines was taking too much sysadmin effort for a small academic team, and cloud grant funding was not a permanent solution.
         </p>
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">
-          Around that time, Google had recently rolled out Google Colab. Beyond eliminating server hosting bills, we saw this as a great educational opportunity: working with Colab gave students hands-on experience with an accessible, industry-standard cloud tool that they could continue using in their own research, final-year projects, and careers after graduation. Vibhoothi, who had recently joined our research group after contributing to VideoLAN, redesigned the lab workflow around Colab GPU runtimes, pairing them with students' institutional Trinity Google Drive accounts for persistent storage.
+          Around that time, Google had recently rolled out <a href="https://colab.research.google.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-medium hover:underline">Google Colab</a>. Beyond eliminating server hosting bills, we saw this as a great educational opportunity: working with Colab gave students hands-on experience with an accessible, industry-standard cloud tool that they could continue using in their own research, final-year projects, and careers after graduation. Vibhoothi, who had recently joined our research group after contributing to <a href="https://www.videolan.org/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-medium hover:underline">VideoLAN</a>, redesigned the lab workflow around Colab GPU runtimes, pairing them with students' institutional Trinity Google Drive accounts for persistent storage.
+        </p>
+        <p className="text-[15px] sm:text-base leading-7 mb-3.5">
+          The backend at this stage still relied on Gitolite over SSH, Ruby on Rails 5.1, PostgreSQL 9.6, and synchronous <code className="text-xs bg-slate-100 text-slate-700 px-1 py-0.5 rounded font-mono border border-slate-200">post-receive</code> hooks, with <a href="https://caddyserver.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-medium hover:underline">Caddy</a> introduced to handle automatic HTTPS / TLS encryption.
         </p>
         <p className="text-[15px] sm:text-base leading-7 mb-4">
           Because free Colab instances don't have an interactive terminal, Vibhoothi wrote a helper notebook (<code className="text-xs bg-slate-100 text-slate-700 px-1 py-0.5 rounded font-mono border border-slate-200">4c16-git-workflow.ipynb</code>) that runs Git commands (clone, commit, push) directly through the Python kernel to sync Drive storage with the server. This solved the hardware barrier completely and allowed the class to expand from 70 to over 150 students across multiple degree streams without needing a dedicated on-campus GPU cluster.
         </p>
 
         <h3 className="text-base font-semibold text-gray-900 mt-6 mb-2">
-          Generation 3 (2026–Present): Platform Overhaul on 4c16.dev
+          Generation 3 (2026-Present): Platform Overhaul on 4c16.dev
         </h3>
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">
-          While the platform was already containerized and running at 4c16.dev, day-to-day administration still required a fair amount of complex command-line operations—from manually provisioning repositories to troubleshooting jobs. With deep learning expanding into a new third-year undergraduate module in 2027/28, student numbers are set to grow substantially, making manual maintenance unsustainable.
+          While the platform was already containerized and running at <a href="https://4c16.dev" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-medium hover:underline">4c16.dev</a>, day-to-day administration still required a fair amount of complex command-line operations, from manually provisioning repositories to troubleshooting jobs. With deep learning expanding into a new third-year undergraduate module in 2027/28, student numbers are set to grow substantially, making manual maintenance unsustainable.
         </p>
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">
           In 2026, Vibhoothi led a major overhaul of the platform to prepare for this expansion. The goal was to make operating the system day-to-day significantly simpler, replacing fragile command-line steps with an automated web portal while ensuring the architecture scales smoothly across multiple cohorts and modules.
         </p>
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">
-          The current system runs as 5 Docker containers on a single host, keeping the workflow clean and reliable:
+          The current system runs as 5 <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-medium hover:underline">Docker</a> containers on a single host, keeping the workflow clean and reliable:
         </p>
 
         {/* Refined Light-Theme Architecture Diagram */}
@@ -205,19 +208,19 @@ export default function HistoryTab() {
 
         <div className="space-y-3.5 text-[15px] sm:text-base leading-7 mt-4">
           <p>
-            At the edge, <strong>Caddy</strong> acts as the front door, handling secure HTTPS connections and automatic SSL certificates, cleanly routing Git operations to Forgejo and web traffic to the student portal.
+            At the edge, <a href="https://caddyserver.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">Caddy</a> acts as the front door, handling secure HTTPS connections and automatic SSL certificates, cleanly routing Git operations to Forgejo and web traffic to the student portal.
           </p>
           <p>
-            For version control and user accounts, we use <strong>Forgejo</strong> (a lightweight Git server). It hosts each student's private code repository, supports Single Sign-On with Trinity accounts, and automatically notifies the backend whenever new code is pushed.
+            For version control and user accounts, we use <a href="https://forgejo.org/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">Forgejo</a> (a lightweight Git server). It hosts each student's private code repository, supports Single Sign-On with Trinity accounts, and automatically notifies the backend whenever new code is pushed.
           </p>
           <p>
-            The web portal is built with <strong>FastAPI</strong> in Python. It gives students their submission history, test results, and live class leaderboards, while giving instructors straightforward tools to manage enrollments and review submissions.
+            The web portal is built with <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">FastAPI</a> in Python. It gives students their submission history, test results, and live class leaderboards, while giving instructors straightforward tools to manage enrollments and review submissions.
           </p>
           <p>
-            Rather than adding separate queuing software like Redis or RabbitMQ, we use <strong>PostgreSQL</strong> for both data storage and the job queue. When a student pushes code, an evaluation job is queued directly in the database, where grading workers pick it up safely without needing extra server infrastructure.
+            Rather than adding separate queuing software like Redis or RabbitMQ, we use <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">PostgreSQL</a> for both data storage and the job queue. When a student pushes code, an evaluation job is queued directly in the database, where grading workers pick it up safely without needing extra server infrastructure.
           </p>
           <p>
-            A background <strong>grading worker</strong> continuously monitors the queue. When a job arrives, it pulls the student's code and runs the test suite (<code className="text-xs bg-slate-100 text-slate-700 px-1 py-0.5 rounded font-mono border border-slate-200">assess-lab</code> and <code className="text-xs bg-slate-100 text-slate-700 px-1 py-0.5 rounded font-mono border border-slate-200">tcd_test.py</code>) inside an isolated Docker container. The worker checks layer shapes, validates model definitions, and benchmarks trained PyTorch models against an unseen test set. Results are saved directly back to the database, so students see their scores on the dashboard in under ten seconds.
+            A background grading worker continuously monitors the queue. When a job arrives, it pulls the student's code and runs the test suite (<code className="text-xs bg-slate-100 text-slate-700 px-1 py-0.5 rounded font-mono border border-slate-200">assess-lab</code> and <code className="text-xs bg-slate-100 text-slate-700 px-1 py-0.5 rounded font-mono border border-slate-200">tcd_test.py</code>) inside an isolated <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">Docker</a> container. The worker checks layer shapes, validates model definitions, and benchmarks trained <a href="https://pytorch.org/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">PyTorch</a> models against an unseen test set. Results are saved directly back to the database, so students see their scores on the dashboard in under ten seconds.
           </p>
         </div>
       </section>
@@ -229,11 +232,11 @@ export default function HistoryTab() {
         </h2>
 
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">
-          By providing immediate feedback, students catch syntax errors, shape mismatches, and bugs right away, rather than waiting days for a lab session. This lets them focus on real machine learning problems and get used to professional tools—Git, SSH keys, unit testing, and PyTorch.
+          By providing immediate feedback, students catch syntax errors, shape mismatches, and bugs right away, rather than waiting days for a lab session. This lets them focus on real machine learning problems and get used to professional tools: <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-medium hover:underline">Git</a>, SSH keys, unit testing, and <a href="https://pytorch.org/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-medium hover:underline">PyTorch</a>.
         </p>
 
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">
-          It also makes open-ended challenges feasible. For advanced labs, students work on uncurated datasets (image classification, natural language processing, semantic segmentation) and compete on a class leaderboard. Because they can test changes quickly, students voluntarily submit dozens of iterations to try out different ideas.
+          It also makes open-ended challenges feasible. For advanced labs, students work on uncurated datasets, such as image classification, natural language processing, and semantic segmentation, and compete on a class leaderboard. Because they can test changes quickly, students voluntarily submit dozens of iterations to try out different ideas.
         </p>
 
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">
@@ -248,7 +251,7 @@ export default function HistoryTab() {
         </h2>
 
         <p className="text-[15px] sm:text-base leading-7 mb-3.5">
-          Many university labs rely on dedicated full-time technicians to maintain commercial platforms. 4C16 was designed and maintained in-house by our own academic and research staff, running as 5 Docker containers on a single virtual host with no commercial licensing costs.
+          Many university labs rely on dedicated full-time technicians to maintain commercial platforms. 4C16 was designed and maintained in-house by our own academic and research staff, running as 5 <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-medium hover:underline">Docker</a> containers on a single virtual host with no commercial licensing costs.
         </p>
 
         <p className="text-[15px] sm:text-base leading-7 mb-5">
@@ -279,13 +282,13 @@ export default function HistoryTab() {
           </h3>
           <ul className="space-y-2.5 text-gray-600">
             <li>
-              <strong className="text-gray-900 font-medium">Dr. François Pitié</strong> — Module Coordinator & Course Creator. Initiated 4C16 in 2017 as Ireland's first undergraduate deep learning module; established the curriculum, pedagogical vision, and the oral viva examination model.
+              <strong className="text-gray-900 font-medium">Dr. François Pitié</strong>: Module Coordinator & Course Creator. Initiated 4C16 in 2017 as Ireland's first undergraduate deep learning module; established the curriculum, pedagogical vision, and the oral viva examination model.
             </li>
             <li>
-              <strong className="text-gray-900 font-medium">Dr. Vibhoothi</strong> — Architect of Gen 2 and Gen 3. Joined after contributing to VideoLAN; designed the migration to Colab and Google Drive (Gen 2) and led the 2026 platform overhaul on 4c16.dev.
+              <strong className="text-gray-900 font-medium">Dr. Vibhoothi</strong>: Architect of Gen 2 and Gen 3. Joined after contributing to <a href="https://www.videolan.org/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue hover:underline">VideoLAN</a>; designed the migration to Colab, Google Drive, and Caddy (Gen 2), and led the 2026 platform overhaul on 4c16.dev.
             </li>
             <li>
-              <strong className="text-gray-900 font-medium">Dr. Hugh Denman</strong> — Architect of Generation 1. Ex-Google engineer; built the initial 2017 platform infrastructure on GCP with Git-based synchronous grading.
+              <strong className="text-gray-900 font-medium">Dr. Hugh Denman</strong>: Architect of Generation 1. Ex-Google engineer; built the initial 2017 platform infrastructure on GCP with Git-based synchronous grading.
             </li>
           </ul>
         </div>
