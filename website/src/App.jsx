@@ -6,14 +6,14 @@ import LecturesTab from './components/LecturesTab';
 import LabsTab from './components/LabsTab';
 import KeynotesTab from './components/KeynotesTab';
 import LabSystemTab from './components/LabSystemTab';
+import HistoryTab from './components/HistoryTab';
 
 function App() {
-  // Using a hash router or handling the base path is important for GitHub Pages.
-  // Since we want clean URLs (e.g. /4c16/LabSystem), we use BrowserRouter with basename.
-  // Ideally, the basename matches the repository name.
+  // Automatically adopt Vite's BASE_URL (e.g. '/4c16' on GitHub Pages, undefined / root on Vercel)
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || undefined;
   
   return (
-    <BrowserRouter basename="/4c16">
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomeTab />} />
@@ -21,6 +21,9 @@ function App() {
           <Route path="labs" element={<LabsTab />} />
           <Route path="lab-system" element={<LabSystemTab />} />
           <Route path="LabSystem" element={<LabSystemTab />} /> {/* Case sensitive alias */}
+          <Route path="lab-system/history" element={<HistoryTab />} />
+          <Route path="LabSystem/history" element={<HistoryTab />} />
+          <Route path="history" element={<HistoryTab />} />
           <Route path="keynotes" element={<KeynotesTab />} />
           {/* Catch-all route to redirect back to home or show 404 */}
           <Route path="*" element={<Navigate to="/" replace />} />

@@ -5,7 +5,8 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/4c16/', // Absolute base path is required for client-side routing
+  // On Vercel, deploy to root '/'; on GitHub Pages, deploy to subpath '/4c16/'
+  base: process.env.VERCEL ? '/' : (process.env.VITE_BASE_PATH || '/4c16/'),
   build: {
     outDir: '../docs',
     emptyOutDir: true,

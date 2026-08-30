@@ -8,7 +8,8 @@ export default function Layout() {
   const location = useLocation();
   // Map path to active tab name
   const getActiveTab = (pathname) => {
-    if (pathname === '/LabSystem') return 'lab system';
+    const lower = pathname.toLowerCase();
+    if (lower.includes('labsystem') || lower.includes('lab-system') || lower.includes('history')) return 'lab system';
     if (pathname === '/lectures') return 'lectures';
     if (pathname === '/labs') return 'labs';
     if (pathname === '/keynotes') return 'keynotes';
