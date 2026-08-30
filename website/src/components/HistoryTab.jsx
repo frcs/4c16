@@ -176,48 +176,45 @@ export default function HistoryTab() {
 
         {/* Refined Light-Theme Architecture Diagram */}
         <pre className="bg-slate-50 border border-slate-200 text-slate-700 p-3.5 sm:p-4 rounded-lg font-mono text-[11px] sm:text-xs overflow-x-auto my-5 leading-relaxed shadow-xs">
-{`  Student Workspace (Colab GPU + Trinity Google Drive)
-        |
-        | Git push over SSH
-        v
-  [ Caddy Web Proxy ] (Automatic SSL / HTTPS)
-        |                                        |
-        | Git Connections                        | Portal Traffic
-        v                                        v
-  [ Forgejo Git Engine ]                  [ FastAPI Web Portal ]
-  * Student Git Repositories              * Student Dashboards & Leaderboard
-  * Trinity Single Sign-On                * Progress & Submission History
-  * Triggers evaluation on push           * Instructor Course Management
-        |                                        |
-        +-------------------+  +-----------------+
-                            |  |
-                            v  v
-                 [ PostgreSQL Database ]
-                 * Course Data & Results
-                 * Background Job Queue
-                            ^
-                            | Pulls jobs & writes scores
-                            v
-               [ Docker Grading Worker ]
-               * Sandboxed automated test execution
-               * PyTorch hold-out set evaluation (<10s)`}
+{`         Student Workspace (Colab GPU + Trinity Google Drive)
+              |                                  |
+              | Git push over SSH (direct)       | Web Browser (HTTPS)
+              v                                  v
+   [ Forgejo Git Server ]                [ Caddy Web Proxy ]
+   * Student repositories                        |
+   * Trinity Single Sign-On                      v
+   * Webhook on push -------------->   [ FastAPI Web Portal ]
+                                       * Dashboards & leaderboard
+                                       * Course admin & submissions
+                                                 |
+                                                 | Enqueues job & serves data
+                                                 v
+                                      [ PostgreSQL Database ]
+                                      * Course data & results
+                                      * Background job queue
+                                                 ^
+                                                 | Claims job & writes scores
+                                                 v
+                                       [ Native Grading Worker ]
+                                       * Sandboxed test execution
+                                       * PyTorch validation (<10s)`}
         </pre>
 
         <div className="space-y-3.5 text-[15px] sm:text-base leading-7 mt-4">
           <p>
-            At the edge, <a href="https://caddyserver.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">Caddy</a> acts as the front door, handling secure HTTPS connections and automatic SSL certificates, cleanly routing Git operations to Forgejo and web traffic to the student portal.
+            At the edge, <a href="https://caddyserver.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">Caddy</a> acts as the web reverse proxy, routing browser traffic to the student portal and internal endpoints with automatic TLS termination. Direct Git SSH connections route straight to Forgejo.
           </p>
           <p>
-            For version control and user accounts, we use <a href="https://forgejo.org/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">Forgejo</a> (a lightweight Git server). It hosts each student's private code repository, supports Single Sign-On with Trinity accounts, and automatically notifies the backend whenever new code is pushed.
+            For version control and identity, we use <a href="https://forgejo.org/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">Forgejo</a> (a lightweight, self-hosted Git server). It hosts each student's private repository, manages Single Sign-On, and automatically dispatches push webhooks to the backend whenever new commits arrive.
           </p>
           <p>
-            The web portal is built with <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">FastAPI</a> in Python. It gives students their submission history, test results, and live class leaderboards, while giving instructors straightforward tools to manage enrollments and review submissions.
+            The web portal is built with <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">FastAPI</a> in Python with server-rendered templates. It provides student progress dashboards, submission histories, and real-time leaderboards, alongside streamlined administrative interfaces for instructors to manage modules and releases.
           </p>
           <p>
-            Rather than adding separate queuing software like Redis or RabbitMQ, we use <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">PostgreSQL</a> for both data storage and the job queue. When a student pushes code, an evaluation job is queued directly in the database, where grading workers pick it up safely without needing extra server infrastructure.
+            Rather than adding separate queuing infrastructure like Redis or RabbitMQ, we use <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">PostgreSQL</a> for both persistent application data and the asynchronous job queue. When a student pushes code, FastAPI enqueues an evaluation job directly into the database.
           </p>
           <p>
-            A background grading worker continuously monitors the queue. When a job arrives, it pulls the student's code and runs the test suite (<code className="text-xs bg-slate-100 text-slate-700 px-1 py-0.5 rounded font-mono border border-slate-200">assess-lab</code> and <code className="text-xs bg-slate-100 text-slate-700 px-1 py-0.5 rounded font-mono border border-slate-200">tcd_test.py</code>) inside an isolated <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">Docker</a> container. The worker checks layer shapes, validates model definitions, and benchmarks trained <a href="https://pytorch.org/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">PyTorch</a> models against an unseen test set. Results are saved directly back to the database, so students see their scores on the dashboard in under ten seconds.
+            A dedicated <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">Docker</a> <strong>grading worker</strong> continuously polls PostgreSQL. When a job arrives, it claims the submission, clones the student commit alongside the exact immutable production lab source, and runs the official test suite (<code className="text-xs bg-slate-100 text-slate-700 px-1 py-0.5 rounded font-mono border border-slate-200">assess-lab</code> and <code className="text-xs bg-slate-100 text-slate-700 px-1 py-0.5 rounded font-mono border border-slate-200">tcd_test.py</code>). The worker validates layer shapes, verifies model architectures, and benchmarks trained <a href="https://pytorch.org/" target="_blank" rel="noopener noreferrer" className="text-tcd-blue font-semibold hover:underline">PyTorch</a> models against unseen validation sets. Results and immutable score snapshots are saved back to the database, surfacing on the student dashboard in under ten seconds.
           </p>
         </div>
       </section>
